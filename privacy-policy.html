@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy | Around The Block LLC</title>
+<meta name="description" content="Privacy Policy for the DigiByte Wallet, published by Around The Block LLC.">
+<style>
+  :root{
+    --bg:#0b0d10; --bg2:#101318; --card:#13171d; --line:#232932;
+    --ink:#eef1f5; --muted:#9aa3ae; --faint:#6b7480; --accent:#7fa6d9;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  header{position:relative;z-index:2}
+  .bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:32px;row-gap:10px;min-height:76px;padding-top:14px;padding-bottom:14px}
+  .brand{display:flex;flex:0 0 auto;white-space:nowrap;align-items:center;gap:12px;font-weight:600;letter-spacing:.01em;font-size:15px}
+  .brand svg{width:26px;height:26px;flex:0 0 auto}
+  nav{display:flex;flex-wrap:wrap;gap:28px;font-size:14px;color:var(--muted)}
+  nav a:hover{color:var(--ink)}
+
+  .hero{position:relative;overflow:hidden;padding:120px 0 128px;border-bottom:1px solid var(--line)}
+  .hero::before{content:"";position:absolute;inset:-40% -10% auto auto;width:900px;height:900px;
+    background:radial-gradient(closest-side,rgba(127,166,217,.10),rgba(127,166,217,0) 70%);pointer-events:none}
+  .grid-bg{position:absolute;inset:0;pointer-events:none;opacity:.35;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:64px 64px;mask-image:radial-gradient(ellipse at 70% 30%,#000 0%,transparent 65%);
+    -webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000 0%,transparent 65%)}
+  .eyebrow{position:relative;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin:0 0 28px}
+  h1{position:relative;margin:0;font-weight:600;letter-spacing:-.035em;line-height:1.02;
+    font-size:clamp(42px,7.4vw,92px);max-width:13ch}
+  h1 span{color:var(--muted)}
+  .lede{position:relative;margin:32px 0 0;max-width:46ch;font-size:clamp(17px,1.6vw,19px);color:var(--muted)}
+
+  .products{padding:96px 0 104px}
+  .label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin:0 0 28px}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .card{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:18px;
+    padding:36px 34px 32px;display:flex;flex-direction:column;min-height:330px;transition:border-color .2s}
+  .card:hover{border-color:#34404f}
+  .icon{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);display:grid;place-items:center;margin-bottom:28px;background:#0e1115}
+  .icon svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .card h2{margin:0 0 4px;font-size:24px;letter-spacing:-.015em;font-weight:600}
+  .tag{font-size:13px;color:var(--faint);margin:0 0 18px}
+  .card p.desc{margin:0;color:var(--muted);font-size:15.5px}
+  .links{margin-top:auto;padding-top:28px;display:flex;gap:22px;flex-wrap:wrap;font-size:14.5px}
+  .links a{color:var(--ink);display:inline-flex;align-items:center;gap:6px}
+  .links a.sub{color:var(--muted)}
+  .links a:hover{color:var(--accent)}
+  .links a .arr{transition:transform .2s}
+  .links a:hover .arr{transform:translateX(3px)}
+
+  .infra{padding:88px 0 96px;border-top:1px solid var(--line)}
+  .infra h2{margin:0 0 14px;font-size:clamp(26px,3vw,34px);letter-spacing:-.02em;font-weight:600;line-height:1.15}
+  .infra .intro{margin:0 0 36px;max-width:60ch;color:var(--muted);font-size:16.5px}
+  .facts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 40px;border-top:1px solid var(--line)}
+  .facts li{padding:16px 0 16px 22px;border-bottom:1px solid var(--line);color:var(--muted);font-size:15.5px;position:relative}
+  .facts li::before{content:"";position:absolute;left:2px;top:27px;width:7px;height:7px;border-radius:2px;background:var(--accent)}
+
+  footer{border-top:1px solid var(--line);padding:48px 0 40px;font-size:13.5px;color:var(--faint)}
+  .fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}
+  footer h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 12px}
+  footer p{margin:0 0 6px}
+  footer a{color:var(--muted)}
+  footer a:hover{color:var(--ink)}
+  .disclose{margin-top:36px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .disclose .legal a{margin-left:20px}
+  .disclose .legal a:first-child{margin-left:0}
+
+  @media (max-width:820px){
+    .cards{grid-template-columns:1fr}
+    .fgrid{grid-template-columns:1fr 1fr}
+    .fgrid > div:first-child{grid-column:1 / -1}
+    .facts{grid-template-columns:1fr}
+  }
+  @media (max-width:560px){
+    .bar{flex-direction:column;align-items:flex-start;padding-top:18px;padding-bottom:16px}
+    nav{gap:22px;font-size:13.5px} .brand{font-size:14.5px;gap:10px}
+    .infra{padding:64px 0 72px}
+    .hero{padding:72px 0 80px}
+    .products{padding:64px 0 72px}
+    .card{padding:28px 24px;min-height:0}
+    .fgrid{grid-template-columns:1fr}
+    .disclose{flex-direction:column}
+  }
+
+  .doc{padding:72px 0 96px;border-bottom:1px solid var(--line)}
+  .doc .wrap{max-width:820px}
+  .doc .eyebrow{margin:0 0 18px}
+  .doc h1{font-size:clamp(36px,5.4vw,60px);max-width:none;margin:0 0 40px}
+  .prose{color:var(--muted);font-size:16px}
+  .prose p{margin:0 0 14px}
+  .prose strong{color:var(--ink);font-weight:600}
+  .prose h2,.prose h3{color:var(--ink);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:44px 0 14px;padding-top:24px;border-top:1px solid var(--line);scroll-margin-top:20px}
+  .prose ul{margin:0 0 18px;padding-left:20px}
+  .prose li{margin:0 0 10px}
+  .prose li::marker{color:var(--accent)}
+  .prose a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;word-break:break-word}
+  .prose a:hover{color:var(--ink)}
+  .prose .gap{height:14px}
+  .prose.contact p{margin:0 0 4px}
+  @media (max-width:560px){.doc{padding:48px 0 64px}.prose{font-size:15.5px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="./" aria-label="Around The Block LLC home">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><rect x="1" y="1" width="11" height="11" rx="2.5" fill="#eef1f5"/><rect x="14" y="1" width="11" height="11" rx="2.5" fill="#3a4554"/><rect x="1" y="14" width="11" height="11" rx="2.5" fill="#3a4554"/><rect x="14" y="14" width="11" height="11" rx="2.5" fill="#7fa6d9"/></svg>
+      Around The Block LLC
+    </a>
+    <nav aria-label="Primary">
+      <a href="./#products">Products</a>
+      <a href="privacy-policy">Privacy</a>
+      <a href="contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="doc">
+    <div class="wrap">
+      <p class="eyebrow">Legal</p>
+      <h1>Privacy Policy</h1>
+      <div class="prose ">
+<h3><strong>DIGIBYTE WALLET — PRIVACY POLICY</strong></h3>
+<p>Effective 2026-10-04</p>
+<h3 id="h.w39lig8tf4xv"><strong>SUMMARY</strong></h3>
+<ul>
+  <li>Using the wallet to hold and move DigiByte requires no account. We do not know who you are.</li>
+  <li>The app contains no analytics, no crash-reporting SDK, no advertising ID, and no third-party trackers of any kind.</li>
+  <li>Your keys, recovery phrase and PIN never leave your device — there is no mechanism in the app that could send them.</li>
+  <li>Sync never sends your addresses to anyone. The app sends your address list to a server only when you run “Scan for missing transactions” or Recover funds.</li>
+  <li>The app’s optional community features (Hub chat and forum, DigiRunner, tipping) DO create a pseudonymous DigiScope account — no name, email or phone, but keyed to your DigiByte address, and what you post there is public. They are opt-in and separate from the wallet.</li>
+  <li>The app makes network requests, and this policy names every server it contacts and what each one can see.</li>
+</ul>
+<h3 id="h.pgnnea98eq2w"><strong>WHO PUBLISHES THIS APP</strong></h3>
+<p>The DigiByte Wallet is published by Around The Block LLC, an Oklahoma limited liability company, which also operates the DigiScope service the app connects to. Where this policy says “we”, it means Around The Block LLC. Around The Block LLC is the party responsible for the data practices described here.</p>
+<p>This policy covers the DigiByte Wallet for Android under both of its package names: the original io.digibyte and its successor, app.aroundtheblock.wallet.</p>
+<p>The company is at aroundtheblock.us, which hosts the authoritative copy of this policy. The version you are reading is published on digiscope.me for convenience, where the app is distributed.</p>
+<p>To reach us about anything in this policy, write to privacy@aroundtheblock.us, or use the support page linked at the bottom.</p>
+<h3 id="h.v8fe8jcjy4yp"><strong>WHAT WE COLLECT: NOTHING THAT IDENTIFIES YOU</strong></h3>
+<p>Holding and moving DigiByte requires no account. There is no sign-up, no email address, no password, and no profile — you can install the wallet, generate keys, receive and spend, and never identify yourself to anyone. If you never open the community features described below, we hold nothing about you beyond the short-lived server logs any web request produces.</p>
+<p>The app contains no analytics SDK, no crash-reporting SDK, no advertising or attribution SDK, and does not read the Android advertising ID. It does not use Google Play Services. There is no telemetry to disable, because none was written.</p>
+<h3 id="h.qdmxqgksbl1a"><strong>WHAT NEVER LEAVES YOUR DEVICE</strong></h3>
+<p>Your recovery phrase, private keys, PIN, and any biometric data stay on your device. Biometrics are handled by Android itself; the app receives only a yes-or-no unlock result and never sees your fingerprint or face data.</p>
+<p>Transactions are signed locally. Signing keys are never transmitted, in any form, to any server — ours or anyone else’s.</p>
+<p>Camera frames used for QR scanning are decoded on-device in real time. Images are neither stored nor uploaded.</p>
+<p>Your address book, transaction labels, and settings are stored in the app’s private storage on your device.</p>
+<h3 id="h.fji2ftvoahng"><strong>WHAT THE APP CONNECTS TO, AND WHAT EACH CAN SEE</strong></h3>
+<p>Any device on the internet reveals its IP address to the servers it contacts. That is true of the wallet as it is of a browser. Here is every destination the app reaches, and what it can observe.</p>
+<p>Automatically, as part of normal use:</p>
+<ul>
+  <li>The DigiByte peer-to-peer network — for blockchain sync. The wallet downloads BIP 157/158 compact block filters and matches them on your device, so peers are never told which addresses are yours. Peers see the IP address you connect from and receive the transactions you broadcast, as they must for any wallet. The wallet starts from a built-in list of well-known nodes and DNS seeds, some of which we operate (digiscope.me, seed.aroundtheblock.app). Optional Tor transport and optional Dandelion++ transaction relay reduce what the network can infer.</li>
+  <li>api.digiscope.me, peer list — a certificate-pinned list of DigiByte nodes to connect to, fetched when sync starts and about every 15 minutes in the background, including when you have paired your own node. It sees your IP address and that a wallet asked for peers. It receives no wallet data.</li>
+  <li>api.digiscope.me, confirmation checks — while any transaction in your wallet is unconfirmed, sent or received, the app asks for the status of those transaction IDs, at most every few minutes. The server can therefore associate your IP address with those transactions.</li>
+  <li>DigiAsset data — for assets your wallet holds or receives, the app requests the asset’s details and the earlier transactions that prove its history, by asset ID and transaction ID. It asks assets.digistamp.co first (operated by DigiStamp, a third party), then api.digiscope.me, then api.digiassets.net. These requests carry no addresses, but asset IDs and transaction IDs are public records tied to your holdings, so whichever service answers can associate your IP address with the assets you hold.</li>
+  <li>Asset images and files — fetched by content ID through our IPFS proxy on api.digiscope.me, falling back to the public gateways trustless-gateway.link, dweb.link and ipfs.io. Some assets point to an image on a web server chosen by the asset’s issuer; the app loads it when the asset is shown, so that server sees your IP address and which image was requested.</li>
+  <li>api.coingecko.com, falling back to api.binance.com — public price tickers, polled every few minutes while the app is open, to display a fiat value. The request carries no wallet data and is the same for every user; those services see your IP address.</li>
+  <li>api.github.com — on every launch the app checks GitHub for a newer release. The request carries no wallet data; GitHub sees your IP address.</li>
+</ul>
+<p>Only when you take an action:</p>
+<ul>
+  <li>Sending a DigiAsset — before you confirm, the app asks api.digiscope.me what each coin it is about to spend carries, by transaction ID and output number. The server can associate your IP address with those coins.</li>
+  <li>Scan for missing transactions, and Settings → Recover funds — these tools send the list of addresses they check to api.digiscope.me, so the server can report coins the wallet may have missed: your wallet’s addresses, or, when recovering, those of the recovery phrase you entered, including its DigiDollar address. The server can therefore associate your IP address with those addresses. This is the only place the app discloses your addresses. Nothing sends them automatically, and the scan tool can be pointed at a server you run instead.</li>
+  <li>Optional community features — the Hub API and its websocket on api.digiscope.me, once you sign in. See “Optional community features” below for exactly what those carry.</li>
+  <li>Digi-ID sign-in — the site you sign in to receives a signature from the wallet. See “Digi-ID sign-in” below.</li>
+  <li>The DigiStamp Market tab — opens the marketplace at assets.digistamp.co, a site run by a third party, inside the app. It behaves like a web page in a browser: it sees your IP address, your device model and Android version, what you view and do there, and the asset you opened it from. Its cookies and site storage stay on your device until you wipe the wallet. The page cannot read your keys, addresses or balances; the most it can do is ask the app to open a screen that you then approve. DigiStamp’s own privacy policy governs what it does with what it sees.</li>
+  <li>Links you tap — a block explorer (which receives the transaction ID), GitHub, the asset creator, or the bug-report page — open in your browser. Those sites see an ordinary web visit, governed by their own privacy policies, not this one.</li>
+</ul>
+<p>Tor is off by default. When you turn it on, the app’s connections go through Tor, except the DigiStamp Market tab and links opened in your browser. If Tor cannot start or cannot reach any peer, the app falls back to a direct connection and tells you so with a banner rather than stop working — so Tor reduces what servers and peers learn, but is not a guarantee.</p>
+<h3 id="h.tqrma5sdmegr"><strong>BUG REPORTS ARE VOLUNTARY, AND HERE IS EXACTLY WHAT THEY CARRY</strong></h3>
+<p>Reporting a bug from inside the app opens the report page on digiscope.me in your browser, pre-filled with technical facts about the build so you do not have to transcribe them: device model and manufacturer, Android version and SDK level, app version and build number, memory page size, whether you are on mainnet or testnet, and the sync stage the wallet was in.</p>
+<p>That is the complete list. No addresses, no balances, no keys, no identifiers, and nothing that names you. You write the description yourself, you can see the pre-filled values before sending, and nothing is submitted unless you submit it.</p>
+<h3 id="h.k8dsxhb7ncj0"><strong>SERVER LOGS</strong></h3>
+<p>Requests to DigiScope-operated servers produce ordinary web-server access logs: IP address, timestamp, the path requested (which, for the requests described above, can include a transaction ID, an asset ID, a coin’s outpoint or a DigiDollar address), the user agent, and the browser or app language header. These exist to keep the service running and to diagnose faults.</p>
+<p>They are rotated daily and retained for roughly two weeks, then deleted. They are not used to build user profiles, are not combined with any other dataset to identify individuals, and are not sold or shared for advertising.</p>
+<h3 id="h.hkmyilaohl2f"><strong>ANDROID PERMISSIONS, AND WHY EACH ONE EXISTS</strong></h3>
+<ul>
+  <li>Internet and network state — to sync with the DigiByte network.</li>
+  <li>Camera — to scan QR codes for addresses, payment requests and Digi-ID sign-in. Frames are processed on-device; nothing is stored or sent.</li>
+  <li>Biometric (and, on older Android versions, fingerprint) — to unlock the app with the credential Android already holds. The app never receives the biometric itself.</li>
+  <li>Notifications — to show sync status locally while the wallet syncs. Notifications are generated on your device; there is no push service and no remote message.</li>
+  <li>Foreground service (data sync) — so blockchain sync can continue while the app is in the background without Android killing it.</li>
+  <li>Wake lock and start at boot — added by Android’s background-work library so scheduled sync can run.</li>
+</ul>
+<p>The app requests no location, contacts, storage, microphone, or phone permissions.</p>
+<h3 id="h.lssje2hsdiz"><strong>WE DO NOT SELL OR SHARE YOUR DATA</strong></h3>
+<p>We have no personal data to sell, and we sell none. Nothing is shared with advertisers, data brokers, or analytics providers. There are no advertising or attribution partners.</p>
+<p>We may disclose the limited server-log information described above if legally compelled to. We cannot disclose keys, recovery phrases, or balances under any circumstances, because we do not hold them.</p>
+<h3 id="h.r5fz9dh3pg9x"><strong>DIGI-ID SIGN-IN</strong></h3>
+<p>Digi-ID lets you sign in to a supporting website by scanning its QR code. The wallet signs a challenge and sends the signature, with the address that made it, to that site. No password and no personal information are transmitted, and DigiScope is not an intermediary in that exchange.</p>
+<p>Each site gets its own key, so sites cannot link your sign-ins to each other or to your wallet. The exceptions are DigiScope’s own sites, and any site you signed in to before per-site keys were introduced: those keep the wallet address used before, so your existing account there still works.</p>
+<p>What the site you sign in to learns, and what it does with it, is governed by that site’s own privacy policy.</p>
+<h3 id="h.v57t4tu1tpld"><strong>OPTIONAL COMMUNITY FEATURES CREATE A PSEUDONYMOUS ACCOUNT</strong></h3>
+<p>The app includes optional community features served by DigiScope: the Hub (chat channels and forum threads), the DigiRunner game and its leaderboard, and tipping. They are opt-in — the wallet works fully without ever opening them — but if you do use them, they are a different privacy situation from the wallet itself, and this section is the honest description of it.</p>
+<p>Signing in uses Digi-ID: DigiScope issues a challenge, your wallet signs it with the key of its first receiving address (the legacy m/0’/0/0 address, which the wallet also watches for payments), and DigiScope returns a session token that the app stores encrypted on your device. That signature proves control of the address, and that address becomes your account identifier on DigiScope.</p>
+<p>What DigiScope then holds and can see:</p>
+<ul>
+  <li>An account record keyed to your DigiByte address, with the public handle you choose.</li>
+  <li>Everything you post — chat messages, forum threads, replies, and upvotes — together with the handle and address that posted it. Each message, thread and reply carries that address and its signature, and other users can see the address. This content is PUBLIC to other users by design. Chat messages are deleted automatically after 30 days; forum threads and replies persist until removed.</li>
+  <li>DigiRunner scores you submit, and your position on the public leaderboard.</li>
+  <li>Tips you send or receive through the site’s tip system, which is a custodial balance held by DigiScope and is separate from the funds in your wallet.</li>
+  <li>Reports you file about other users’ content.</li>
+</ul>
+<p>The account is pseudonymous: no name, email address, or phone number is ever collected or requested, and the handle is whatever you choose. We do not know who you are, and nothing in the sign-in flow could tell us.</p>
+<p>What makes it more than a throwaway username is that the identifier is a DigiByte address — one of your own wallet’s addresses, a permanent, public key on a public ledger. Posting in the Hub therefore links that address to whatever you say, and anyone can look up what it has received. If you have ever used the same address with a service that knows your legal identity — an exchange withdrawal, for instance — that service can connect the two, and chain analysis can link it to the rest of your wallet. None of that involves DigiScope, and none of it can be undone afterwards.</p>
+<p>So: pseudonymous, not anonymous. If that distinction matters to you, use a separate wallet for the Hub, or do not sign in at all — nothing else in the app depends on it. Signing out removes the session token from your device; content you already posted remains until you ask us to delete the account (see “Deleting your community account” below).</p>
+<h3 id="h.a25pip0bcl9"><strong>THE BLOCKCHAIN ITSELF IS PUBLIC AND PERMANENT</strong></h3>
+<p>DigiByte is a public blockchain. Every transaction — addresses, amounts, and timing — is visible to anyone, permanently, and neither the wallet nor DigiScope can delete, alter, or hide it. This is a property of the network, not a choice this app makes.</p>
+<p>The wallet is designed to avoid linking that public record to you: compact-filter sync means your addresses are not handed to a server during sync, and the Receive screen moves to a fresh address once the one it shows has been paid. Your DigiDollar receive address is the exception: it is fixed, so everyone you give it to can see the same history. Anything you publish yourself — posting an address, or sharing it with a service that knows your identity — connects that history to you, and no wallet can undo it.</p>
+<h3 id="h.1d921an9rsqs"><strong>CHILDREN</strong></h3>
+<p>The wallet is intended for adults and is not directed to children, and we do not knowingly collect information from anyone. Using the wallet itself requires no account and produces no record here; if you used the optional community features and want that account and its posts removed, see the next section.</p>
+<h3 id="h.85wadbx2vn9q"><strong>DELETING YOUR COMMUNITY ACCOUNT</strong></h3>
+<p>The wallet itself has no account to delete: uninstalling the app removes its data from your phone. Write down your recovery phrase first, because we cannot restore it.</p>
+<p>If you signed in to the optional community features, you can ask us to delete that DigiScope account. Email privacy@aroundtheblock.us with the subject “Delete my account” and include your Hub handle and the address shown on your profile. We may ask you to confirm the request from inside the Hub, so that we know it comes from whoever controls the account. If the account holds a tip balance, say so in the request and we will settle it with you before deleting.</p>
+<p>Deletion removes the account record, your handle, your chat messages, forum threads, replies and upvotes, your DigiRunner scores, and the reports you filed. We complete it within 30 days. Server access logs are not separately erased; they age out within about two weeks. Anything recorded on the DigiByte blockchain, including the address itself, cannot be deleted by anyone.</p>
+<h3 id="h.9dvxkuec6xn9"><strong>YOUR DATA, YOUR CONTROL</strong></h3>
+<p>Because everything meaningful lives on your device, you control it directly. Uninstalling the app removes its local data from your phone. Funds are not stored in the app — they exist on the blockchain, and your recovery phrase is what reaches them, which is why that phrase must be backed up before you uninstall anything.</p>
+<p>If you want access, correction, or deletion of anything you believe we hold, write to privacy@aroundtheblock.us and we will respond within 30 days. In practice the honest answer is usually that we hold nothing tied to you.</p>
+<h3 id="h.fn3ackxjuurd"><strong>SECURITY</strong></h3>
+<p>The source is public at<a href="https://github.com/JohnnyLawDGB/digibytewallet-android" rel="noopener"> github.com/JohnnyLawDGB/digibytewallet-android</a>. Every release is built and signed in continuous integration and published with its SHA-256, so you can verify what you installed.</p>
+<h3 id="h.bpbkkens1tgx"><strong>CHANGES AND CONTACT</strong></h3>
+<p>If a future release adds a network request or changes what a request carries, this policy is updated in the same release rather than afterwards. The effective date above tracks the current version.</p>
+<p>If Around The Block LLC ever transfers ownership of the DigiScope service or of this app, this policy will say so before the transfer takes effect, and the authoritative copy at aroundtheblock.us is the one to check. A wallet holding your own keys is not affected by who owns a website — but who operates the servers it talks to is exactly the kind of thing this policy exists to tell you.</p>
+<p>Questions, corrections, or a claim here that does not match what you observe: write to privacy@aroundtheblock.us, or use the support page or the wallet feedback form linked below. If you find a discrepancy between this policy and what the app actually does, that is a bug, and we want the report.</p>
+<p>Around The Block LLC, 7122 S Sheridan Rd Ste 2 PMB 1022, Tulsa, OK 74133-2748, United States. Phone: (918) 237-6979. privacy@aroundtheblock.us</p>
+<p>Also published at: https://digiscope.me/wallet/privacy-policy</p>
+<div class="gap"></div>
+<div class="gap"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h3>Around The Block LLC</h3>
+        <p>7122 S Sheridan Rd Ste 2 PMB 1022<br>Tulsa, OK 74133-2748<br>United States</p>
+        <p>Phone: <a href="tel:+19182376979">(918) 237-6979</a></p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>General: <a href="mailto:contact@aroundtheblock.us">contact@aroundtheblock.us</a></p>
+        <p>Support: <a href="mailto:support@aroundtheblock.us">support@aroundtheblock.us</a></p>
+        <p>Privacy: <a href="mailto:privacy@aroundtheblock.us">privacy@aroundtheblock.us</a></p>
+        <p>We respond to support requests within two business days.</p>
+      </div>
+      <div>
+        <h3>Security</h3>
+        <p>Security: <a href="mailto:security@aroundtheblock.us">security@aroundtheblock.us</a></p>
+        <p>Security issues are handled under the policy published in <a href="https://github.com/JohnnyLawDGB/digibytewallet-android">SECURITY.md in the wallet repository</a>. Please report them there or to security@aroundtheblock.us rather than in public channels.</p>
+      </div>
+    </div>
+    <div class="disclose">
+      <span>Copyright 2026 AROUND THE BLOCK LLC. All rights reserved.</span>
+      <span class="legal">
+        <a href="privacy-policy">Privacy Policy</a>
+        <a href="contact">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
