@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="canonical" href="https://www.aroundtheblock.us/cases/dgbpool">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Three Wrong First Answers: tracing deposits sent to dgbpool.com</title>
+<meta name="description" content="How verification overturned three plausible first conclusions in a DigiByte deposit trace.">
+<meta name="author" content="Mark McNiel">
+<style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.6;color:#1a1a1a;background:#fff;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem}
+h1{font-size:1.9rem;line-height:1.25;margin:0 0 .5rem}h2{font-size:1.3rem;margin-top:2.2rem;border-bottom:1px solid #e5e5e5;padding-bottom:.3rem}
+a{color:#0b57d0}table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}th,td{border:1px solid #ddd;padding:.5rem .6rem;text-align:left;vertical-align:top}th{background:#f5f5f5}
+hr{border:0;border-top:1px solid #e5e5e5;margin:2.5rem 0}em{color:#555}li{margin:.3rem 0}
+@media (prefers-color-scheme:dark){body{background:#111;color:#e8e8e8}th{background:#1d1d1d}th,td{border-color:#333}h2,hr{border-color:#333}a{color:#8ab4f8}em{color:#aaa}}</style>
+</head>
+<body>
+<main>
+<h1>Three Wrong First Answers: tracing deposits sent to dgbpool.com</h1>
+<p><em>By Mark McNiel (JohnnyLaw), Around The Block LLC, Stillwater, Oklahoma. Published Oct 12, 2026.</em></p>
+<h2>The incident</h2>
+<p>Someone who had sent DGB to a site called dgbpool.com asked me to find out where their deposits went. My on-chain analysis confirmed those deposits and followed the funds from there.</p>
+<h2>Three first conclusions that did not survive verification</h2>
+<p>Every case hands you an easy story early. This one handed me three, and each one was wrong.</p>
+<ol>
+<li>
+<p><strong>"The site is distributing malware."</strong> The site linked DigiByte-branded downloads to a GitHub organization. That looks bad. When I checked, the organization returned a 404 and the links were dead. A dead link proves nothing about malware, so I don't claim it.</p>
+</li>
+<li>
+<p><strong>"Here is how much was laundered."</strong> The cash-out leg moved a very large amount of DGB to an exchange. It was tempting to call all of it stolen. But nobody had itemized that figure, so I could not show how much of it traced back to this case. A number you can't itemize is not a theft figure, so it stays out.</p>
+</li>
+<li>
+<p><strong>"Tell the exchange and they'll freeze it."</strong> That sat in an early draft of the next steps. When I checked how freezes actually work, a report from someone who isn't the account holder usually isn't enough for a lasting hold. It generally needs an official case behind it. The guidance changed to match.</p>
+</li>
+</ol>
+<h2>What was actually established</h2>
+<ul>
+<li>dgbpool.com was registered on 2026-03-29 through Registrar.eu (Hosting Concepts B.V.) and expires 2027-03-29. Its nameservers are at ZillionKingHost and it is hosted on OVH.</li>
+<li>One deposit address is confirmed as the site's, through off-chain ground truth. The reporting person's deposits are confirmed on-chain.</li>
+<li>What that one address received is a certified floor, not a ceiling. How many other people sent funds is still open.</li>
+<li>From that address, funds were swept to a hub controlled by the same owner. A single public key signed every input of an 11-input consolidation.</li>
+<li>From the hub, funds moved through a passthrough address left at zero balance, then to a feeder address that sent 100% of its outflow to a confirmed KuCoin hot wallet. KuCoin is the cluster's cash-out venue.</li>
+<li>No obfuscation on the path. The CoinJoin check came back clean.</li>
+</ul>
+<h2>The restraint</h2>
+<p>There are a few things I chose not to say. I'm not publishing the reporting person's transactions, amounts, or dates. I'm not publishing the large throughput figure from the cash-out leg, because it hasn't been itemized and it isn't a theft number. I'm not saying why anyone did anything. On-chain data shows what moved, not what someone meant. And there was a timing coincidence in the domain records that looked meaningful. It's an observation, not a conclusion, so it stays internal.</p>
+<h2>What this means for people and projects</h2>
+<p>If you lost funds, the first story you hear (from others or from yourself) is usually the most dramatic one, and it is often not the right one. For projects and builders, when someone uses your name, the pull is to go loud fast. Don't. An overstated claim gets challenged, and when it falls, it takes the true claims down with it. Verify before you accuse. Separate what you can anchor to evidence from what you only suspect, and publish only the first part.</p>
+<p>Say what you can prove, and nothing past it.</p>
+<hr />
+<p><strong>If you were affected:</strong> Tracing is free for now, I will never charge upfront fees, and I cannot promise recovery. Treat anyone who contacts you offering to recover your DGB for a fee as a second scam until proven otherwise. See <a href="https://aroundtheblock.us/methodology">How I trace DigiByte thefts</a> for how I work and how to file a report.</p>
+</main>
+</body>
+</html>

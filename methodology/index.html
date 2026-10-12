@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="canonical" href="https://www.aroundtheblock.us/methodology">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How I trace DigiByte thefts</title>
+<meta name="description" content="A plain-language explanation of how DigiByte thefts are traced, labeled, verified, and reported, and how victims should file.">
+<meta name="author" content="Mark McNiel">
+<style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.6;color:#1a1a1a;background:#fff;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem}
+h1{font-size:1.9rem;line-height:1.25;margin:0 0 .5rem}h2{font-size:1.3rem;margin-top:2.2rem;border-bottom:1px solid #e5e5e5;padding-bottom:.3rem}
+a{color:#0b57d0}table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}th,td{border:1px solid #ddd;padding:.5rem .6rem;text-align:left;vertical-align:top}th{background:#f5f5f5}
+hr{border:0;border-top:1px solid #e5e5e5;margin:2.5rem 0}em{color:#555}li{margin:.3rem 0}
+@media (prefers-color-scheme:dark){body{background:#111;color:#e8e8e8}th{background:#1d1d1d}th,td{border-color:#333}h2,hr{border-color:#333}a{color:#8ab4f8}em{color:#aaa}}</style>
+</head>
+<body>
+<main>
+<h1>How I trace DigiByte thefts</h1>
+<p><em>By Mark McNiel (JohnnyLaw), Around The Block LLC, Stillwater, Oklahoma. Last updated Oct 12, 2026.</em></p>
+<p>When DigiByte (DGB) is stolen or sent to a fraudulent site, the blockchain keeps a permanent public record of where it went. I follow that record and write down only what it proves. This page explains how I do that, how I label what I find, what I will never claim, and what to do if you have lost funds.</p>
+<p>I am not a law enforcement officer, a lawyer, or a licensed investigator, and nothing here is legal or financial advice.</p>
+<h2>Who I am</h2>
+<ul>
+<li>Founder of Around The Block LLC, which publishes the DigiByte Mobile wallet and runs the DigiScope explorer.</li>
+<li>DigiByte Core contributor (JohnnyLawDGB on GitHub): 16 pull requests, 10 merged, including fixes for an oracle consensus deadlock and a Dandelion++ deadlock. <a href="https://github.com/DigiByte-Core/digibyte/pulls?q=author%3AJohnnyLawDGB">My pull requests</a></li>
+<li>DigiDollar oracle operator: oracle 8 of 35 in the mainnet oracle roster hard-coded in DigiByte Core, from v9.26.2 on, live and signing. <a href="https://github.com/DigiByte-Core/digibyte/blob/v9.26.7/src/kernel/chainparams.cpp#L372">Source</a></li>
+<li>DNS seed operator: seed.aroundtheblock.app has been one of DigiByte Core's hard-coded mainnet DNS seeds since 8.22.0, added in <a href="https://github.com/DigiByte-Core/digibyte/pull/131">pull request #131</a>. <a href="https://github.com/DigiByte-Core/digibyte/blob/v9.26.7/src/kernel/chainparams.cpp#L246">Source</a></li>
+<li>Published a signed Guix build attestation for DigiByte Core 8.22.0-rc1. <a href="https://github.com/DigiByte-Core/guix.sigs/tree/main/8.22-rc1/MarkMcNiel">Attestation</a></li>
+</ul>
+<h2>The short version</h2>
+<ul>
+<li>I trace funds one hop at a time and record the evidence for every hop.</li>
+<li>Every number I publish carries a label that says how solid it is.</li>
+<li>I say what moved. I never say why someone moved it.</li>
+<li>Nothing goes public until it has been checked against the chain and reviewed.</li>
+<li>I never publish anything that identifies a victim.</li>
+<li>Tracing is free for now, and I never promise recovery.</li>
+</ul>
+<h2>1. The hop-by-hop approach</h2>
+<p>A trace starts from something confirmed: a transaction the victim made or the transaction that took their funds. From there I follow the money forward.</p>
+<ol>
+<li><strong>Start from an anchor.</strong> The first hop must be a transaction that is confirmed on-chain and that the victim or other evidence ties to the case.</li>
+<li><strong>Follow every output.</strong> When funds split, I follow each branch. When they merge with other money, I keep following them instead of stopping.</li>
+<li><strong>Share the taint fairly when funds mix.</strong> When stolen funds are combined with other funds in one transaction, I use proportional tracing by default. Each output is treated as carrying its proportional share of the stolen amount. I also check the result with a second, first-in-first-out convention. Any figure that depends on how mixed funds are divided names the convention it used.</li>
+<li><strong>Record each hop.</strong> Every hop gets its block height and time, the amount, and a plain label for what happened there, such as a split, a consolidation, a holding wallet, or an exchange.</li>
+<li><strong>Stop where the funds stop.</strong> A branch ends when it reaches an exchange, or when the funds are sitting unspent. Unspent funds are listed with their current balance so the total is accounted for, not just the part that reached an exchange.</li>
+<li><strong>Check for mixing first.</strong> Before I treat two addresses as having the same owner, I check whether the transaction looks like a CoinJoin, a mixer, or an exchange batching deposits. Those patterns break the usual ownership signals.</li>
+<li><strong>Keep exchanges out of suspect clusters.</strong> When I group addresses that appear to share an owner, I never merge through an exchange wallet. A cluster that would include an exchange is marked contaminated and set aside.</li>
+<li><strong>Label exchanges carefully.</strong> An address is labeled as an exchange deposit address only after repeated, consistent forwarding into a wallet already verified as belonging to that exchange. Every exchange label carries its basis, because the exchange will ask how it was identified.</li>
+</ol>
+<p>I test my own tracing against cases where the answer is already known from a careful manual ledger. When the automated trace and the manual ledger disagree, I fix the tracing before I rely on it.</p>
+<h2>2. How each figure is labeled</h2>
+<p>Every number in a report carries one of four labels:</p>
+<table>
+<thead>
+<tr>
+<th>Label</th>
+<th>What it means</th>
+<th>How I use it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Certified</strong></td>
+<td>Itemized transaction by transaction and checked on-chain</td>
+<td>Can be stated as a fact</td>
+</tr>
+<tr>
+<td><strong>Floor</strong></td>
+<td>Certified, but only part of the picture. The real figure is at least this much and may be more</td>
+<td>Always written as "at least"</td>
+</tr>
+<tr>
+<td><strong>Sampled</strong></td>
+<td>Based on a sample of transactions, not every one</td>
+<td>Never presented as a total</td>
+</tr>
+<tr>
+<td><strong>Contaminated</strong></td>
+<td>Mixed with funds that are not part of the case, such as an exchange's own liquidity</td>
+<td>Never presented as a loss or a theft figure</td>
+</tr>
+</tbody>
+</table>
+<p>A sampled or contaminated number is never published as a theft total. If a large figure has not been itemized, it stays out of public copy, however tempting it is.</p>
+<h2>3. Confidence levels</h2>
+<p>Attributions and other claims also carry a confidence level:</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>What it takes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Confirmed</strong></td>
+<td>Publicly disclosed and independently verifiable, for example an exchange's own published wallet list</td>
+</tr>
+<tr>
+<td><strong>High</strong></td>
+<td>Several independent data points that agree</td>
+</tr>
+<tr>
+<td><strong>Medium</strong></td>
+<td>One strong indicator, or several weak ones</td>
+</tr>
+<tr>
+<td><strong>Low</strong></td>
+<td>A working hypothesis that needs more evidence</td>
+</tr>
+</tbody>
+</table>
+<p>Only confirmed and high-confidence findings go into a public write-up as findings. Medium and low items are written down as open questions or left out.</p>
+<h2>4. Facts and observations are kept apart</h2>
+<p>I keep two separate lists for every case.</p>
+<ul>
+<li><strong>Facts</strong> are things anyone can check: on-chain transactions and balances, domain registration records, and whether a link loads or returns an error. Each fact carries its evidence.</li>
+<li><strong>Observations</strong> are things that look meaningful but are not proven, such as a timing coincidence or a pattern that suggests a motive. Observations stay internal. They do not appear on a public page.</li>
+</ul>
+<h2>5. What I never claim</h2>
+<ul>
+<li><strong>Intent.</strong> The chain shows what moved, not what anyone meant. I do not say why anyone did anything.</li>
+<li><strong>Identity without an anchored link.</strong> I do not say two sites or wallets have the same operator unless there is concrete shared evidence, such as the same key signing for both.</li>
+<li><strong>Recovery.</strong> I never promise or imply that funds will come back. Most stolen crypto is not recovered. In one wallet theft I traced in 2025, the funds were not recovered. The value of that work was a clear, checkable trace and fixes that made my tracing more accurate.</li>
+<li><strong>Exchange action.</strong> An exchange decides for itself what to do. A report from someone who is not the account holder usually is not enough for a lasting hold. That generally needs an official case.</li>
+<li><strong>Anything I cannot show.</strong> A dead download link proves nothing about malware. An un-itemized figure is not a theft figure.</li>
+</ul>
+<h2>6. Verification before anything is published</h2>
+<p>Before a finding goes public, it has to pass these checks:</p>
+<ul>
+<li>Every claim is specific and could be proven wrong.</li>
+<li>Every claim is tied to evidence someone else can check.</li>
+<li>Other explanations have been considered and written down, including innocent ones.</li>
+<li>Every figure is labeled, and any figure that depends on mixed funds names its tracing convention.</li>
+<li>Links, domains, and claimed downloads have been checked live, not assumed.</li>
+<li>Limitations are stated: what the evidence does not show.</li>
+<li>A person reviews it. Automated tools, including AI assistants, can suggest evidence, but they cannot publish anything on their own.</li>
+</ul>
+<p>In the <a href="https://aroundtheblock.us/cases/dgbpool">dgbpool.com case study</a>, these checks overturned three plausible first conclusions before anything went out.</p>
+<h2>7. Victim privacy</h2>
+<ul>
+<li>I do not publish victims' names, transaction IDs, wallet addresses, amounts, or dates.</li>
+<li>A floor figure is left out if publishing it would reveal one person's loss.</li>
+<li>I do not share a victim's case material with any exchange, network, or organization without their written consent. Anything I share with networks is anonymized, and raw case files are never shared.</li>
+<li>I will never ask for your seed phrase, private keys, or remote access to your device.</li>
+</ul>
+<h2>8. Fees and recovery</h2>
+<p>Tracing is free for now. I am building a public record first, and I will never charge upfront fees or promise recovery. I cannot promise that your DGB will come back, and I will tell you plainly when recovery is unlikely.</p>
+<h2>9. Warning: recovery scams</h2>
+<p>People who lose crypto are often targeted a second time by "recovery" scammers.</p>
+<ul>
+<li>No legitimate service asks for an upfront fee to recover stolen funds.</li>
+<li>Treat anyone who contacts you first promising recovery, including people who claim to be a "blockchain recovery expert," a lawyer, an exchange employee, or a government agent, as a scammer until proven otherwise.</li>
+<li>Real law enforcement and real exchanges do not ask for payment to return stolen funds.</li>
+<li>Never pay a fee "to unlock" or "to release" funds. That is the scam continuing.</li>
+<li>Never share your seed phrase or give anyone remote access to your device.</li>
+</ul>
+<h2>10. If you lost funds: how to file</h2>
+<p>Do these yourself. A first-person report from the person who lost the funds carries weight that a report from anyone else cannot.</p>
+<ol>
+<li><strong>Preserve your evidence now.</strong> Save your transaction IDs, dates, and amounts, and take screenshots of the site, your account page, any failed withdrawal messages, and all messages with the other party.</li>
+<li><strong>Report to the FBI's Internet Crime Complaint Center (IC3)</strong> at <a href="https://www.ic3.gov">ic3.gov</a> if you are in the United States. Outside the US, use your country's national fraud reporting service, for example Action Fraud in the UK.</li>
+<li><strong>File a report with your local police</strong> and ask for a report or case number. Exchanges generally need an official case before they can hold funds for any length of time.</li>
+<li><strong>Contact the exchange only through its official channels.</strong> Go to the exchange's own website by typing the address yourself, and use its official support or fraud reporting page. Never use a support contact that reaches out to you first by direct message, email, or phone. If you have a police or IC3 case number, include it.</li>
+<li><strong>If a bank transfer or card payment was involved at any point,</strong> tell your bank right away.</li>
+<li><strong>Report the site or addresses publicly</strong> on Chainabuse (chainabuse.com) so others are warned.</li>
+</ol>
+<hr />
+<p><em>Questions about this method: <a href="mailto:mark@aroundtheblock.us">mark@aroundtheblock.us</a>.</em></p>
+</main>
+</body>
+</html>
