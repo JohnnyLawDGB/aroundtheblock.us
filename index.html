@@ -52,6 +52,8 @@
   .card h2{margin:0 0 4px;font-size:24px;letter-spacing:-.015em;font-weight:600}
   .tag{font-size:13px;color:var(--faint);margin:0 0 18px}
   .card p.desc{margin:0;color:var(--muted);font-size:15.5px}
+  .card p.disc{margin:14px 0 0;color:var(--faint);font-size:14px}
+  .card img.mark{width:96px;height:96px;margin:0 0 20px;display:block}
   .links{margin-top:auto;padding-top:28px;display:flex;gap:22px;flex-wrap:wrap;font-size:14.5px}
   .links a{color:var(--accent);display:inline-flex;align-items:center;gap:6px}
   .links a.sub{color:var(--muted)}
@@ -128,10 +130,11 @@
       <div class="cards">
 
         <article class="card">
-          <div class="icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10.5 18.5h3"/><path d="M9.5 9.5l2 2 3.5-3.5"/></svg></div>
-          <h2>DigiByte Wallet</h2>
+          <img class="mark" src="assets/holdfast-mark.png" width="96" height="96" alt="HoldFast Wallet mark">
+          <h2>HoldFast Wallet</h2>
           <p class="tag">Android &middot; Non-custodial &middot; Open source</p>
-          <p class="desc">A non-custodial mobile wallet for Android. Your keys are generated and stored on your phone, and sync runs on BIP157/158 compact block filters, so your addresses never leave your device. Coming to Google Play. An iOS version is in development.</p>
+          <p class="desc">A self-custody mobile wallet for DGB and DigiDollar on Android. Your keys are generated and stored on your phone, and sync runs on BIP157/158 compact block filters, so your addresses never leave your device. Formerly ATB Wallet. Coming to Google Play. An iOS version is in development.</p>
+          <p class="disc"><em>Independent wallet by Around The Block LLC. Not an official DigiByte app.</em></p>
           <div class="links">
             <a href="https://digiscope.me/wallet">Download and details <span class="arr">&rarr;</span></a>
             <a class="sub" href="https://github.com/JohnnyLawDGB/digibytewallet-android">Source code</a>
