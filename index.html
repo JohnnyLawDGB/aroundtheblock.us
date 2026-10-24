@@ -24,6 +24,7 @@
   .bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:32px;row-gap:10px;min-height:76px;padding-top:14px;padding-bottom:14px}
   .brand{display:flex;flex:0 0 auto;white-space:nowrap;align-items:center;gap:12px;font-weight:600;letter-spacing:.01em;font-size:15px}
   .brand svg{width:26px;height:26px;flex:0 0 auto}
+  .brand img{width:44px;height:44px;border-radius:10px;flex:0 0 auto;display:block}
   nav{display:flex;flex-wrap:wrap;gap:28px;font-size:14px;color:var(--muted)}
   nav a:hover{color:var(--accent)}
 
@@ -97,13 +98,29 @@
     .disclose{flex-direction:column}
   }
 </style>
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0b0d10">
+<meta property="og:image" content="https://www.aroundtheblock.us/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Around The Block logo: a circuit-board cube wrapped in a blue ribbon">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.aroundtheblock.us/og-image.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Around The Block LLC">
+<meta property="og:title" content="Around The Block LLC">
+<meta property="og:description" content="Around The Block LLC builds open-source software for the DigiByte blockchain, including a non-custodial Android wallet. Tulsa, Oklahoma.">
+<meta property="og:url" content="https://www.aroundtheblock.us/">
 </head>
 <body>
 
 <header>
   <div class="wrap bar">
     <a class="brand" href="./" aria-label="Around The Block LLC home">
-      <svg viewBox="0 0 26 26" aria-hidden="true"><rect x="1" y="1" width="11" height="11" rx="2.5" fill="#eef1f5"/><rect x="14" y="1" width="11" height="11" rx="2.5" fill="#3a4554"/><rect x="1" y="14" width="11" height="11" rx="2.5" fill="#3a4554"/><rect x="14" y="14" width="11" height="11" rx="2.5" fill="#0066cc"/></svg>
+      <img src="assets/atb-logo-64.webp" srcset="assets/atb-logo-64.webp 1x, assets/atb-logo-128.webp 2x" width="44" height="44" alt="" decoding="async">
       Around The Block LLC
     </a>
     <nav aria-label="Primary">
