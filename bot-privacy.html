@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DigiScope Tip Service: Privacy Policy | Around The Block LLC</title>
+<meta name="description" content="Privacy Policy for the DigiScope tip service, operated by Around The Block LLC.">
+<style>
+  :root{
+    --bg:#0b0d10; --bg2:#101318; --card:#13171d; --line:#232932;
+    --ink:#eef1f5; --muted:#9aa3ae; --faint:#7f8896; --accent:#5b8cff; --accent-hi:#90a9ff; --dgb:#0066cc; --dgb-navy:#002352;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:rgba(0,102,204,.55);color:#fff}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  header{position:relative;z-index:2}
+  .bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:32px;row-gap:10px;min-height:76px;padding-top:14px;padding-bottom:14px}
+  .brand{display:flex;flex:0 0 auto;white-space:nowrap;align-items:center;gap:12px;font-weight:600;letter-spacing:.01em;font-size:15px}
+  .brand svg{width:26px;height:26px;flex:0 0 auto}
+  nav{display:flex;flex-wrap:wrap;gap:28px;font-size:14px;color:var(--muted)}
+  nav a:hover{color:var(--accent)}
+
+  .hero{position:relative;overflow:hidden;padding:120px 0 128px;border-bottom:1px solid var(--line)}
+  .hero::before{content:"";position:absolute;inset:-40% -10% auto auto;width:900px;height:900px;
+    background:radial-gradient(closest-side,rgba(0,102,204,.24),rgba(91,140,255,.07) 55%,rgba(91,140,255,0) 75%);pointer-events:none}
+  .hero{background:radial-gradient(ellipse 70% 90% at 15% 110%,rgba(0,35,82,.45),rgba(0,35,82,0) 70%),linear-gradient(180deg,rgba(0,35,82,.30),rgba(0,35,82,0) 80%)}
+  .grid-bg{position:absolute;inset:0;pointer-events:none;opacity:.35;
+    background-image:linear-gradient(rgba(91,140,255,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(91,140,255,.22) 1px,transparent 1px);
+    background-size:64px 64px;mask-image:radial-gradient(ellipse at 70% 30%,#000 0%,transparent 65%);
+    -webkit-mask-image:radial-gradient(ellipse at 70% 30%,#000 0%,transparent 65%)}
+  .eyebrow{position:relative;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 28px}
+  h1{position:relative;margin:0;font-weight:600;letter-spacing:-.035em;line-height:1.02;
+    font-size:clamp(42px,7.4vw,92px);max-width:13ch}
+  h1 span{color:var(--accent);text-shadow:0 0 32px rgba(91,140,255,.35)}
+  .lede{position:relative;margin:32px 0 0;max-width:46ch;font-size:clamp(17px,1.6vw,19px);color:var(--muted)}
+
+  .products{padding:96px 0 104px}
+  .label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 28px}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .card{background:linear-gradient(180deg,var(--card),var(--bg2));border:1px solid var(--line);border-radius:18px;
+    padding:36px 34px 32px;display:flex;flex-direction:column;min-height:330px;transition:border-color .2s,box-shadow .2s}
+  .card:hover{border-color:rgba(91,140,255,.45);box-shadow:0 0 30px rgba(0,102,204,.18)}
+  .icon{width:44px;height:44px;border-radius:12px;border:1px solid rgba(91,140,255,.30);display:grid;place-items:center;margin-bottom:28px;background:#0e1115;box-shadow:inset 0 0 18px rgba(0,102,204,.22)}
+  .icon svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+  .card h2{margin:0 0 4px;font-size:24px;letter-spacing:-.015em;font-weight:600}
+  .tag{font-size:13px;color:var(--faint);margin:0 0 18px}
+  .card p.desc{margin:0;color:var(--muted);font-size:15.5px}
+  .links{margin-top:auto;padding-top:28px;display:flex;gap:22px;flex-wrap:wrap;font-size:14.5px}
+  .links a{color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+  .links a.sub{color:var(--muted)}
+  .links a:hover{color:var(--accent-hi)}
+  .links a .arr{transition:transform .2s}
+  .links a:hover .arr{transform:translateX(3px)}
+
+  .infra{padding:88px 0 96px;border-top:1px solid var(--line)}
+  .infra h2{margin:0 0 14px;font-size:clamp(26px,3vw,34px);letter-spacing:-.02em;font-weight:600;line-height:1.15}
+  .infra .intro{margin:0 0 36px;max-width:60ch;color:var(--muted);font-size:16.5px}
+  .facts{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0 40px;border-top:1px solid var(--line)}
+  .facts li{padding:16px 0 16px 22px;border-bottom:1px solid var(--line);color:var(--muted);font-size:15.5px;position:relative}
+  .facts li::before{content:"";position:absolute;left:2px;top:27px;width:7px;height:7px;border-radius:2px;background:var(--accent);box-shadow:0 0 8px rgba(91,140,255,.55)}
+
+  footer{border-top:1px solid var(--line);padding:48px 0 40px;font-size:13.5px;color:var(--faint)}
+  .fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}
+  footer h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 12px}
+  footer p{margin:0 0 6px}
+  footer a{color:var(--muted)}
+  footer a:hover{color:var(--accent)}
+  .fgrid a{color:var(--accent)}
+  .fgrid a:hover{color:var(--accent-hi)}
+  .disclose{margin-top:36px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .disclose .legal a{margin-left:20px}
+  .disclose .legal a:first-child{margin-left:0}
+
+  @media (max-width:820px){
+    .cards{grid-template-columns:1fr}
+    .fgrid{grid-template-columns:1fr 1fr}
+    .fgrid > div:first-child{grid-column:1 / -1}
+    .facts{grid-template-columns:1fr}
+  }
+  @media (max-width:560px){
+    .bar{flex-direction:column;align-items:flex-start;padding-top:18px;padding-bottom:16px}
+    nav{gap:22px;font-size:13.5px} .brand{font-size:14.5px;gap:10px}
+    .infra{padding:64px 0 72px}
+    .hero{padding:72px 0 80px}
+    .products{padding:64px 0 72px}
+    .card{padding:28px 24px;min-height:0}
+    .fgrid{grid-template-columns:1fr}
+    .disclose{flex-direction:column}
+  }
+
+  .doc{padding:72px 0 96px;border-bottom:1px solid var(--line);
+    background:radial-gradient(ellipse 60% 480px at 85% 0%,rgba(0,102,204,.18),rgba(0,102,204,0) 70%),linear-gradient(180deg,rgba(0,35,82,.28),rgba(0,35,82,0) 420px)}
+  .doc .wrap{max-width:820px}
+  .doc .eyebrow{margin:0 0 18px}
+  .doc h1{font-size:clamp(36px,5.4vw,60px);max-width:none;margin:0 0 40px}
+  .prose{color:var(--muted);font-size:16px}
+  .prose p{margin:0 0 14px}
+  .prose strong{color:var(--ink);font-weight:600}
+  .prose h2,.prose h3{color:var(--ink);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:44px 0 14px;padding-top:24px;border-top:1px solid var(--line);scroll-margin-top:20px}
+  .prose ul{margin:0 0 18px;padding-left:20px}
+  .prose li{margin:0 0 10px}
+  .prose li::marker{color:var(--accent)}
+  .prose a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;word-break:break-word}
+  .prose a:hover{color:var(--accent-hi)}
+  .prose .gap{height:14px}
+  .prose.contact p{margin:0 0 4px}
+  .prose ul.alpha{list-style:none;padding-left:20px}
+  @media (max-width:560px){.doc{padding:48px 0 64px}.prose{font-size:15.5px}}
+</style>
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#0b0d10">
+<meta property="og:image" content="https://www.aroundtheblock.us/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Around The Block logo: a circuit-board cube wrapped in a blue ribbon">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.aroundtheblock.us/og-image.png">
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="./" aria-label="Around The Block LLC home">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><rect x="1" y="1" width="11" height="11" rx="2.5" fill="#eef1f5"/><rect x="14" y="1" width="11" height="11" rx="2.5" fill="#3a4554"/><rect x="1" y="14" width="11" height="11" rx="2.5" fill="#3a4554"/><rect x="14" y="14" width="11" height="11" rx="2.5" fill="#0066cc"/></svg>
+      Around The Block LLC
+    </a>
+    <nav aria-label="Primary">
+      <a href="./#products">Products</a>
+      <a href="privacy-policy">Privacy</a>
+      <a href="contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="doc">
+    <div class="wrap">
+      <p class="eyebrow">Around The Block LLC</p>
+      <h1>DigiScope Tip Service: Privacy Policy</h1>
+      <div class="prose">
+<p>Effective date: October 26, 2026</p>
+<h2>1. Who we are</h2>
+<p>1.1 The DigiScope tip service (the "Service") is operated by Around The Block LLC ("we", "us", "our"). The person responsible for the operator is Mark McNiel, who is on X as @Johnny_DGB.</p>
+<p>1.2 This policy explains what information we collect when you use the Service, how we use it and what choices you have. It covers the X account @DigiScope_Me, tips, deposits and withdrawals, and the DigiScope account pages that support them.</p>
+<p>1.3 Contact details are in section 13.</p>
+<h2>2. Information we collect</h2>
+<p>2.1 From X: your X user ID and handle, and the public content of posts and commands that you send to the Service or that mention it.</p>
+<p>2.2 Account information: details about the DigiScope account you create or link, and any social account you choose to link to it.</p>
+<p>2.3 Wallet addresses: the deposit code assigned to you, DigiByte addresses you give us for withdrawals, and transaction IDs.</p>
+<p>2.4 Ledger and transaction records: your balance, deposits, tips sent and received, withdrawals, and the dates and times of each.</p>
+<p>2.5 Verification and safety information: whether your account is verified, and records we keep to apply limits and prevent abuse.</p>
+<p>2.6 Technical information: your IP address, browser or device type, and the times of your visits. These may appear in session records and server logs.</p>
+<p>2.7 Messages you send to us or to the AI replies of the Service, and anything you ask us in an email.</p>
+<p>2.8 We collect only what we need to run the Service. Do not send us private details you do not want us to have.</p>
+<h2>3. How we use information</h2>
+<p>3.1 To run the Service: process deposits, tips, held tips and withdrawals, and keep your balance correct.</p>
+<p>3.2 To post replies and confirmations on X.</p>
+<p>3.3 To keep the Service safe: detect abuse and duplicate accounts, apply limits and checks, and investigate problems.</p>
+<p>3.4 To answer your messages and give support.</p>
+<p>3.5 To keep records, follow the law and protect our rights.</p>
+<p>3.6 To improve the Service and its automated replies.</p>
+<h2>4. Public by design</h2>
+<p>4.1 Tip confirmations are posted publicly on X. They can name the sender and the recipient and show the amount.</p>
+<p>4.2 Transactions on the DigiByte blockchain are public and permanent. Anyone can see them. We cannot change or delete them.</p>
+<p>4.3 We cannot delete posts made on X. Deleting your DigiScope account does not remove public posts or blockchain records.</p>
+<h2>5. AI and automation</h2>
+<p>5.1 The @DigiScope_Me account is automated. It uses an AI model to write some replies and posts.</p>
+<p>5.2 To write a reply or post, the Service may send text to our AI provider, Anthropic. This can include the public text of a post and the messages you send to the AI features of the Service.</p>
+<p>5.3 Anthropic handles that text under its own terms and policies.</p>
+<p>5.4 AI replies may be wrong, and they may be published without review by a person.</p>
+<h2>6. Who we share information with</h2>
+<p>6.1 X. The Service runs on X. X receives what you post and what the Service posts. X handles that information under its own terms and privacy policy.</p>
+<p>6.2 Anthropic, our AI provider, as described in section 5.</p>
+<p>6.3 Hosting and infrastructure providers that we use to run our servers.</p>
+<p>6.4 We may share information when the law, a court or a government body requires it, or when needed to protect the Service, our rights, or other people.</p>
+<p>6.5 If our business is sold, merged or transferred, information may be transferred as part of that.</p>
+<h2>7. How long we keep information</h2>
+<p>7.1 We keep information for as long as we need it to run the Service, keep records, resolve disputes, prevent abuse and follow the law.</p>
+<p>7.2 We may keep some records longer, such as ledger and transaction records.</p>
+<h2>8. Security</h2>
+<p>8.1 We use reasonable steps to protect information, including limits on who can reach our systems.</p>
+<p>8.2 No system is perfectly secure. We cannot promise that your information or your balance will not be lost, stolen or disclosed.</p>
+<h2>9. Your choices</h2>
+<p>9.1 You can ask us to show you, correct or delete the information we hold about you, or to close your account. Contact us using section 13. We may need to confirm who you are first.</p>
+<p>9.2 Some information cannot be deleted. This includes public posts on X, blockchain records, and records we must keep for legal or safety reasons.</p>
+<p>9.3 If you have a balance, withdraw it before you ask us to close your account.</p>
+<p>9.4 You can stop using the Service at any time.</p>
+<p>9.5 Depending on where you live, you may have extra rights under local law. Contact us to ask about them.</p>
+<h2>10. Children</h2>
+<p>10.1 The Service is not for anyone under 18. We do not knowingly collect information from people under 18.</p>
+<p>10.2 If you think a person under 18 has used the Service, contact us and we will take steps to remove their information.</p>
+<h2>11. Where information is handled</h2>
+<p>11.1 Our providers and servers may be in other countries. Your information may be handled outside the place where you live.</p>
+<h2>12. Changes to this policy</h2>
+<p>12.1 We may update this policy. The new version will be posted at aroundtheblock.us with a new effective date. If you keep using the Service after a change, you accept the updated policy.</p>
+<h2>13. Contact</h2>
+<p>13.1 For privacy matters, including access and deletion, email <a href="mailto:privacy@aroundtheblock.us">privacy@aroundtheblock.us</a></p>
+<p>13.2 Our <a href="bot-terms">Terms of Service</a> explain the rules for using the Service.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h3>Around The Block LLC</h3>
+        <p>7122 S Sheridan Rd Ste 2 PMB 1022<br>Tulsa, OK 74133-2748<br>United States</p>
+        <p>Phone: <a href="tel:+19182376979">(918) 237-6979</a></p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>General: <a href="mailto:contact@aroundtheblock.us">contact@aroundtheblock.us</a></p>
+        <p>Support: <a href="mailto:support@aroundtheblock.us">support@aroundtheblock.us</a></p>
+        <p>Privacy: <a href="mailto:privacy@aroundtheblock.us">privacy@aroundtheblock.us</a></p>
+        <p>We respond to support requests within two business days.</p>
+      </div>
+      <div>
+        <h3>Security</h3>
+        <p>Security: <a href="mailto:security@aroundtheblock.us">security@aroundtheblock.us</a></p>
+        <p>Security issues are handled under the policy published in <a href="https://github.com/JohnnyLawDGB/digibytewallet-android">SECURITY.md in the wallet repository</a>. Please report them there or to security@aroundtheblock.us rather than in public channels.</p>
+      </div>
+    </div>
+    <div class="disclose">
+      <span>Copyright 2026 AROUND THE BLOCK LLC. All rights reserved.</span>
+      <span class="legal">
+        <a href="privacy-policy">Privacy Policy</a>
+        <a href="bot-terms">Bot Terms</a>
+        <a href="bot-privacy">Bot Privacy</a>
+        <a href="contact">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
