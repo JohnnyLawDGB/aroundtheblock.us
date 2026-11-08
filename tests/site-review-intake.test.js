@@ -79,7 +79,8 @@ test("review pages state the offer without prices or a DigiScope portal", functi
     const html = read(file);
     assert.match(html, /Free for DigiByte builders\./);
     assert.match(html, /within the scope we agree on together/);
-    assert.match(html, /No public pricing yet\./);
+    assert.match(html, /Other projects: tell us about your site and we will follow up\./);
+    assert.doesNotMatch(html, /No public pricing yet/);
     assert.match(html, /by a channel agreed for that project/);
     assert.match(html, /not a certification/);
     assert.match(html, /not a guarantee that the site is secure/);
@@ -94,8 +95,7 @@ test("review pages state the offer without prices or a DigiScope portal", functi
     assert.match(html, /We do not state a retention period/);
     const visible = html.replace(/<style[\s\S]*?<\/style>/gi, "").replace(/<script[\s\S]*?<\/script>/gi, "");
     assert.doesNotMatch(visible, /DigiScope|DUSD|DigiDollar|account portal|What it costs|\$\d|\$0|\b175\b|\b350\b|\b600\b|\b125\b/i);
-    const withoutPricingSentence = visible.replace(/No public pricing yet\./g, "");
-    assert.doesNotMatch(withoutPricingSentence, /pric/i);
+    assert.doesNotMatch(visible, /pric/i);
     assert.doesNotMatch(html, /type="password"|type="file"|<input[^>]+hidden/i);
     assert.equal((html.match(/[^\x00-\x7F]/g) || []).length, 0, file + " has a non-ASCII character");
   });
