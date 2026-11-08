@@ -13,7 +13,9 @@ function toNested(html) {
     ['href="favicon-32.png"', 'href="../favicon-32.png"'],
     ['href="apple-touch-icon.png"', 'href="../apple-touch-icon.png"'],
     ['href="site.webmanifest"', 'href="../site.webmanifest"'],
-    ['src="assets/', 'src="../assets/']
+    ['src="assets/', 'src="../assets/'],
+    ['srcset="assets/', 'srcset="../assets/'],
+    ['1x, assets/', '1x, ../assets/']
   ];
   var out = html;
   for (var i = 0; i < pairs.length; i++) out = out.split(pairs[i][0]).join(pairs[i][1]);
