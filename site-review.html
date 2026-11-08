@@ -1,19 +1,116 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <link rel="canonical" href="https://www.aroundtheblock.us/site-review">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Website Security Review</title>
-<meta name="description" content="A point-in-time security review of your public website by Around The Block LLC, with reports delivered privately in your DigiScope account.">
+<title>Website security reviews | Around The Block LLC</title>
+<meta name="description" content="A point-in-time look at your public website, with human-reviewed findings. Free for DigiByte builders. No public pricing yet.">
 <meta name="author" content="Mark McNiel">
-<style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.6;color:#1a1a1a;background:#fff;max-width:720px;margin:0 auto;padding:2rem 1.25rem 4rem}
-h1{font-size:1.9rem;line-height:1.25;margin:0 0 .5rem}h2{font-size:1.3rem;margin-top:2.2rem;border-bottom:1px solid #e5e5e5;padding-bottom:.3rem}
-a{color:#0b57d0}table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.95rem}th,td{border:1px solid #ddd;padding:.5rem .6rem;text-align:left;vertical-align:top}th{background:#f5f5f5}
-hr{border:0;border-top:1px solid #e5e5e5;margin:2.5rem 0}em{color:#555}li{margin:.3rem 0}
-.badge{display:inline-block;border:1px solid #0b57d0;border-radius:6px;padding:.4rem .8rem;font-size:.9rem;color:#0b57d0}
-.legal{font-size:.9rem}
-@media (prefers-color-scheme:dark){body{background:#111;color:#e8e8e8}th{background:#1d1d1d}th,td{border-color:#333}h2,hr{border-color:#333}a{color:#8ab4f8}em{color:#aaa}}</style>
+<style>
+  :root{
+    --bg:#0b0d10; --bg2:#101318; --card:#13171d; --line:#232932;
+    --ink:#eef1f5; --muted:#9aa3ae; --faint:#7f8896; --accent:#5b8cff; --accent-hi:#90a9ff; --dgb:#0066cc; --dgb-navy:#002352;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  ::selection{background:rgba(0,102,204,.55);color:#fff}
+  a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+  [hidden]{display:none !important}
+  .skip{position:absolute;left:12px;top:-48px;background:#fff;color:#000;padding:8px 12px;z-index:5;border-radius:6px}
+  .skip:focus{top:12px}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+  header{position:relative;z-index:2}
+  .bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;column-gap:32px;row-gap:10px;min-height:76px;padding-top:14px;padding-bottom:14px}
+  .brand{display:flex;flex:0 0 auto;white-space:nowrap;align-items:center;gap:12px;font-weight:600;letter-spacing:.01em;font-size:15px}
+  .brand svg{width:26px;height:26px;flex:0 0 auto}
+  nav{display:flex;flex-wrap:wrap;gap:28px;font-size:14px;color:var(--muted)}
+  nav a:hover,nav a[aria-current="page"]{color:var(--accent)}
+
+  footer{border-top:1px solid var(--line);padding:48px 0 40px;font-size:13.5px;color:var(--faint)}
+  .fgrid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:32px}
+  footer h3{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 12px}
+  footer p{margin:0 0 6px}
+  footer a{color:var(--muted)}
+  footer a:hover{color:var(--accent)}
+  .fgrid a{color:var(--accent)}
+  .fgrid a:hover{color:var(--accent-hi)}
+  .disclose{margin-top:36px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .disclose .legal a{margin-left:20px}
+  .disclose .legal a:first-child{margin-left:0}
+
+  .doc{padding:72px 0 96px;border-bottom:1px solid var(--line);
+    background:radial-gradient(ellipse 60% 480px at 85% 0%,rgba(0,102,204,.18),rgba(0,102,204,0) 70%),linear-gradient(180deg,rgba(0,35,82,.28),rgba(0,35,82,0) 420px)}
+  .doc .wrap{max-width:820px}
+  .doc .eyebrow{margin:0 0 18px}
+  .doc h1{font-size:clamp(36px,5.4vw,60px);max-width:none;margin:0 0 22px;font-weight:600;letter-spacing:-.035em;line-height:1.05}
+  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 28px}
+  .prose{color:var(--muted);font-size:16px;overflow-wrap:anywhere}
+  .prose p{margin:0 0 14px}
+  .prose strong{color:var(--ink);font-weight:600}
+  .prose h2{color:var(--ink);font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin:44px 0 14px;padding-top:24px;border-top:1px solid var(--line);scroll-margin-top:20px}
+  .prose ul,.prose ol{margin:0 0 18px;padding-left:20px}
+  .prose li{margin:0 0 10px}
+  .prose li::marker{color:var(--accent)}
+  .prose a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+  .prose a:hover{color:var(--accent-hi)}
+  .prose .callout h2{text-transform:none;letter-spacing:-.02em;font-size:clamp(26px,4vw,34px);line-height:1.15;border:0;margin:0 0 10px;padding:0;color:var(--ink)}
+  .callout{border:1px solid rgba(91,140,255,.45);background:rgba(0,102,204,.16);border-radius:14px;padding:22px 22px 20px;margin:8px 0 22px}
+  .callout p{color:var(--ink);font-size:17px;margin:0}
+  .badge{display:inline-block;border:1px solid var(--accent);border-radius:8px;padding:8px 12px;color:var(--accent);font-size:15px}
+  .legal{font-size:15px}
+  .legal li{margin:0 0 12px}
+
+  .form{display:flex;flex-direction:column;gap:18px;margin-top:8px}
+  #owner-fields{display:flex;flex-direction:column;gap:18px}
+  .field{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .field label,.choice legend{color:var(--ink);font-weight:600;font-size:15px}
+  .hint,.help{color:var(--muted);font-size:14.5px;margin:0}
+  input,select,textarea{
+    width:100%;max-width:100%;color-scheme:dark;
+    background:#0e1116;color:var(--ink);
+    border:1px solid var(--line);border-radius:10px;
+    padding:12px 14px;font:inherit;font-size:16px}
+  textarea{min-height:120px;resize:vertical}
+  .choice{border:1px solid var(--line);border-radius:12px;padding:14px 16px 8px;margin:0;min-width:0}
+  .choice label{font-weight:500;display:flex;gap:10px;align-items:flex-start;margin:8px 0;color:var(--ink)}
+  .choice input{width:20px;height:20px;margin-top:2px;flex:0 0 auto;accent-color:var(--accent)}
+  .check{display:flex;gap:12px;align-items:flex-start;color:var(--ink)}
+  .check input{width:20px;height:20px;margin-top:3px;flex:0 0 auto;accent-color:var(--accent)}
+  .actions{display:flex;flex-wrap:wrap;gap:12px}
+  .actions button{font:inherit;font-size:15px;font-weight:600;min-height:44px;padding:12px 16px;border-radius:10px;cursor:pointer}
+  .actions .primary{background:var(--dgb);color:#fff;border:1px solid var(--dgb)}
+  .actions .primary:hover{background:#1a75d6}
+  .actions .secondary{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .actions .secondary:hover{border-color:var(--accent);color:var(--accent)}
+  .errbox{border:1px solid #ffb4ab;background:rgba(255,180,171,.08);border-radius:12px;padding:12px 14px;color:#ffd7d1}
+  .errbox p{margin:0;color:#ffd7d1}
+  .field-error{color:#ffb4ab;font-size:14px;margin:0}
+  .field input[aria-invalid="true"],.field select[aria-invalid="true"],.field textarea[aria-invalid="true"]{border-color:#ffb4ab}
+  #form-status{min-height:1.5em}
+  .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+
+  @media (max-width:820px){
+    .fgrid{grid-template-columns:1fr 1fr}
+    .fgrid > div:first-child{grid-column:1 / -1}
+  }
+  @media (max-width:560px){
+    .bar{flex-direction:column;align-items:flex-start;padding-top:18px;padding-bottom:16px}
+    nav{gap:18px 22px;font-size:13.5px}
+    .brand{font-size:14.5px;gap:10px}
+    .doc{padding:48px 0 64px}
+    .prose{font-size:15.5px}
+    .fgrid{grid-template-columns:1fr}
+    .disclose{flex-direction:column}
+    .actions button{width:100%}
+    .wrap{padding:0 16px}
+  }
+</style>
 <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -27,83 +124,255 @@ hr{border:0;border-top:1px solid #e5e5e5;margin:2.5rem 0}em{color:#555}li{margin
 <meta name="twitter:image" content="https://www.aroundtheblock.us/og-image.png">
 </head>
 <body>
+<a class="skip" href="#request">Skip to the request form</a>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="./" aria-label="Around The Block LLC home">
+      <svg viewBox="0 0 26 26" aria-hidden="true"><rect x="1" y="1" width="11" height="11" rx="2.5" fill="#eef1f5"/><rect x="14" y="1" width="11" height="11" rx="2.5" fill="#3a4554"/><rect x="1" y="14" width="11" height="11" rx="2.5" fill="#3a4554"/><rect x="14" y="14" width="11" height="11" rx="2.5" fill="#0066cc"/></svg>
+      Around The Block LLC
+    </a>
+    <nav aria-label="Primary">
+      <a href="./#products">Products</a>
+      <a href="site-review" aria-current="page">Security Review</a>
+      <a href="privacy-policy">Privacy</a>
+      <a href="contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
 <main>
-<h1>Website Security Review</h1>
-<p><em>By Mark McNiel (JohnnyLaw), Around The Block LLC, Stillwater, Oklahoma. Last updated Nov 5, 2026.</em></p>
-<p>I look at your website the way an outsider would. I use the latest available security toolkits to test your public surfaces, then a person goes through every result, removes the noise, and writes up what matters in plain language. If you want deeper, targeted scans, I can do those on request once we agree in writing on exactly what is in scope.</p>
-<p>This is a snapshot of your site on the day it was tested. It is not monitoring, and it is not a guarantee that your site is secure.</p>
+  <section class="doc">
+    <div class="wrap">
+      <p class="eyebrow">Around The Block LLC</p>
+      <h1>Website security reviews</h1>
+      <div class="prose">
+        <p>A point-in-time look at your public website, with human-reviewed findings and suggested fixes.</p>
+        <p>We use AI-assisted tools to look at what a normal visitor can already see. A person reviews every finding before it is shared. This is a snapshot of the site on the day it is tested. It is not monitoring, not a certification, and not a guarantee that the site is secure.</p>
 
-<h2>The short version</h2>
-<ul>
-<li>Default reviews look only at what the public can already see: your pages, headers, DNS, certificates, and scripts.</li>
-<li>Testing is passive and non-intrusive unless you ask for more in writing.</li>
-<li>AI-assisted toolkits do the heavy lifting, and the methods may expand or change as better tools arrive. A person reviews every finding before you see it.</li>
-<li>Your report is delivered privately in your own DigiScope account. You never share a password with me.</li>
-<li>Payment is in DigiDollar (DUSD). DigiByte builders pay nothing.</li>
-</ul>
+        <aside class="callout">
+          <h2>Free for DigiByte builders.</h2>
+          <p>If you publicly build or maintain a DigiByte project, your review is free. Free reviews get the same care and checks as any other review. Each one covers the site you name, within the scope we agree on together.</p>
+        </aside>
+        <p>Other projects: tell us about your site and we will follow up. No public pricing yet.</p>
 
-<h2>What it costs</h2>
-<table>
-<thead><tr><th>Review</th><th>Good for</th><th>Price</th></tr></thead>
-<tbody>
-<tr><td><strong>Tier A</strong>, public surface, small</td><td>One domain plus www. A brochure site or small app. No login testing.</td><td>175 DUSD</td></tr>
-<tr><td><strong>Tier B</strong>, public surface, larger</td><td>Many subdomains, a larger JavaScript surface, or staging and production sites.</td><td>350 DUSD</td></tr>
-<tr><td><strong>Tier C</strong>, deeper targeted scans</td><td>Logged-in or limited active testing, only on written request with signed rules of engagement.</td><td>600 DUSD</td></tr>
-<tr><td><strong>Re-review</strong></td><td>Same scope as your last review, focused on what changed. Renews your badge.</td><td>125 DUSD</td></tr>
-<tr><td><strong>DigiByte builders</strong></td><td>People who publicly maintain a DigiByte project. Same paperwork and checks as paid reviews.</td><td>Free</td></tr>
-</tbody>
-</table>
-<p>All prices are in DigiDollar (DUSD) only. Larger or unusual sites get a custom quote.</p>
+        <h2>How it works</h2>
+        <ol>
+          <li>Prepare a request with the form below. It opens your email app with a draft. It does not send the message by itself, and it does not start a review.</li>
+          <li>We confirm you control the site, with a DNS record or a small file we give you.</li>
+          <li>We agree on scope in writing before any work. We only look at what a normal visitor can see unless you sign a separate authorization for deeper testing.</li>
+          <li>You get your findings privately, by a channel agreed for that project.</li>
+        </ol>
+        <p>Preparing this request is not permission to test. Nothing starts until we confirm with you. We never ask for passwords, seed phrases, private keys, or payment details. Do not send them.</p>
 
-<h2>How it works</h2>
-<ol>
-<li><strong>Tell me about your site.</strong> You fill out a short intake and confirm in writing that you own the site or are allowed to have it tested.</li>
-<li><strong>Prove you control the domain.</strong> You add a DNS TXT record or a small file at a /.well-known path I give you. No testing starts until that checks out.</li>
-<li><strong>I run the review.</strong> Current toolkits test your public surfaces under human supervision.</li>
-<li><strong>A person checks the results.</strong> False alarms come out. Real issues get a plain explanation and suggested fixes.</li>
-<li><strong>You get your report privately.</strong> It appears in your DigiScope account portal.</li>
-</ol>
+        <h2>How findings are shared</h2>
+        <p>Findings are shared privately, by a channel agreed for that project. We do not publish them without your written consent. Secrets are redacted in the report. We never ask for your password, and you should not send one.</p>
 
-<h2>How your report is delivered</h2>
-<p>Reports go into the DigiScope account portal that belongs to you. You sign in to your own account to read and download it. I never ask for your password, and you should never send it to me or anyone else. Findings stay confidential and are not shared without your written consent. Secrets are redacted in the report.</p>
+        <h2>The badge</h2>
+        <p>If you want one after a review, you can show a dated badge on your site:</p>
+        <p><span class="badge">Reviewed by AroundTheBlock.Us on [date]</span></p>
+        <ul>
+          <li>It says reviewed, never secured. It is not a certification.</li>
+          <li>It links to a verification page with the review date, expiry date, and a plain disclaimer.</li>
+          <li>It expires 90 days after the review. A re-review renews it.</li>
+          <li>We can revoke it if it is misused, and it comes down when it expires.</li>
+        </ul>
 
-<h2>The badge</h2>
-<p>If you want, you can show a dated badge on your site after a review:</p>
-<p><span class="badge">Reviewed by AroundTheBlock.Us on [date]</span></p>
-<ul>
-<li>It says reviewed, never secured. It is not a certification.</li>
-<li>It links to a verification page with the review date, expiry date, and a plain disclaimer.</li>
-<li>It expires 90 days after the review. A re-review renews it.</li>
-<li>I can revoke it if it is misused, and it comes down when it expires.</li>
-</ul>
+        <h2>What is not included</h2>
+        <ul>
+          <li>Continuous monitoring, firewalls, malware cleanup, or incident response.</li>
+          <li>Any promise that your site is secure or free of problems.</li>
+          <li>Fixing the issues. You get findings and guidance. The fixes are yours unless we agree otherwise.</li>
+          <li>Anything that changes your data, denial of service, or social engineering.</li>
+          <li>Your host, CDN, or cloud provider, unless you get their permission first.</li>
+        </ul>
 
-<h2>What is not included</h2>
-<ul>
-<li>Continuous monitoring, firewalls, malware cleanup, or incident response.</li>
-<li>Any promise that your site is secure or free of problems.</li>
-<li>Fixing the issues. You get findings and guidance; the fixes are yours unless we agree otherwise.</li>
-<li>Anything that changes your data, denial of service, or social engineering.</li>
-<li>Your host, CDN, or cloud provider, unless you get their permission first.</li>
-</ul>
+        <h2>Inquiry privacy</h2>
+        <p>The draft includes only what you type in this form: the site and any other hostnames, your name, email, project, role, owner details if you are writing for the owner, whether you are a DigiByte builder and a public project link if you are, the scope you request, exclusions, and the confirmation below. It does not ask for passwords, seed phrases, private keys, card numbers, credentials, or files.</p>
+        <p>This page does not send or store the draft. If you later send the email from your own email app, that message goes to the address above. We do not state a retention period for it here, because this website never receives the form.</p>
 
-<h2>The fine print</h2>
-<div class="legal">
-<p><em>Prices and terms are subject to change.</em></p>
-<ol>
-<li><strong>Default Services.</strong> Unless the parties agree otherwise in writing, the Services consist of testing of Client's public-facing websites and related public surfaces using current AI-assisted toolkits, operated and supervised by a person. The specific tools and methods may expand or change over time. By default, testing is passive and non-intrusive: it is limited to what a normal browser user or public DNS lookup could observe, plus materials Client chooses to provide.</li>
-<li><strong>Active or Targeted Testing.</strong> ATB will perform deeper, targeted, or active testing (for example authenticated testing, port scanning, fuzzing, or exploit-style checks) only if Client requests it in writing and the parties sign a written authorization and rules of engagement that name the assets, methods, time window, rate limits, and contacts. ATB will stay within those rules and will stop on Client's request.</li>
-<li><strong>Point-in-Time Review.</strong> Each review reflects only the systems, configurations, and content observed on the date or dates tested. The Services are not continuous monitoring, incident response, or ongoing protection. Changes made after the test date are not covered.</li>
-<li><strong>No Warranty.</strong> The Services, reports, and any badge are provided "as is." ATB makes no warranty or guarantee, express or implied, that any site is secure, free of defects, or free of vulnerabilities, and disclaims all implied warranties, including merchantability and fitness for a particular purpose. Tools and reviewers can miss issues. Findings are advisory only. Client alone is responsible for deciding whether and how to fix any issue and for all remediation.</li>
-<li><strong>Limitation of Liability.</strong> To the fullest extent permitted by law, ATB's total liability arising out of or related to an engagement is limited to the fees Client actually paid ATB for that engagement. For free-tier engagements (including the DigiByte builder tier), no fees are paid, so ATB's liability is $0 to the fullest extent permitted by law. In no event is ATB liable for indirect, incidental, special, consequential, or punitive damages, or for lost profits, revenue, data, or goodwill, even if advised of their possibility. This section does not limit liability that cannot be limited under applicable law.</li>
-<li><strong>Client Authority and Verification.</strong> Before any testing, Client must confirm in writing that it owns, or is authorized by the owner to permit testing of, every asset in scope. ATB will verify control of each domain by a DNS TXT record or a file placed at a /.well-known path that ATB specifies, and will not test until verification succeeds. Client will defend, indemnify, and hold harmless ATB from claims, losses, and costs arising from any misstatement of Client's ownership or authority.</li>
-<li><strong>Third-Party Infrastructure.</strong> Client is responsible for obtaining any permission required from its hosting provider, CDN, cloud platform, or other third-party service before testing. Third-party systems are out of scope unless Client provides that provider's written permission or the provider's published terms clearly allow the testing.</li>
-<li><strong>Confidentiality and Data Handling.</strong> ATB will treat findings, reports, and data collected during an engagement as Client confidential information, use them only to perform the Services, and not publish or share them without Client's written consent, except as required by law. ATB will collect the minimum data needed, redact secrets in reports, protect stored data with reasonable security measures, keep raw tool output for up to 90 days after delivery and final reports for up to 24 months (or less on Client's written request), and then delete them.</li>
-<li><strong>AI-Assisted Tools.</strong> ATB uses automated and AI-assisted tools to run tests and draft reports. A person reviews findings and reports before delivery, but AI-assisted output can contain errors, and that review does not change Sections 3 through 5.</li>
-<li><strong>Badge.</strong> If Client opts in, ATB may issue a badge that states the site was "reviewed," never "secured," for example: "Reviewed by AroundTheBlock.Us on YYYY-MM-DD (badge expires YYYY-MM-DD)." The badge must link to ATB's verification page, which shows the review date, expiry, and a disclaimer that a review is not a guarantee of security. The badge expires 90 days after the review date unless renewed by a new review. ATB may revoke the badge at any time, including if Client misrepresents it, and Client will remove it on expiry or revocation and will not describe it as a certification or guarantee.</li>
-</ol>
-</div>
-<hr>
-<p><em>Around The Block LLC, Stillwater, Oklahoma. Prices and terms are subject to change. Nothing on this page is legal advice or a guarantee of security.</em></p>
+        <h2 id="request">Request a review</h2>
+        <p>Use the form to prepare an email to <strong id="intake-destination">contact@aroundtheblock.us</strong>. That is the general contact published on our contact page. The buttons stay on your device. Open in my email app opens your email application with a draft. Copy message and Download message are there if no email app opens. This website does not receive the form, and a review does not start from it.</p>
+        <p>We agree on the written scope before any work. Active or deeper testing needs a separate signed authorization. The draft is a request, not that authorization.</p>
+        <noscript>
+          <p>JavaScript is off, so this page cannot prepare the draft for you. You can email contact@aroundtheblock.us yourself. Include the site URL, your name, a contact email, the project name, your role, whether you are a DigiByte builder, the scope you want, and anything off limits. Say that the message is a request, not permission to test. Do not include passwords, seed phrases, private keys, or payment details.</p>
+        </noscript>
+
+        <form id="review-request" class="form" action="#" onsubmit="return false" novalidate aria-labelledby="request">
+          <div id="form-errors" class="errbox" role="alert" tabindex="-1" hidden></div>
+
+          <div class="field">
+            <label for="site-url">Site URL (required)</label>
+            <input id="site-url" name="site-url" type="url" inputmode="url" autocomplete="url" spellcheck="false" required aria-required="true" maxlength="300" aria-describedby="site-url-hint site-url-error">
+            <p id="site-url-hint" class="hint">The main site you want reviewed. Include https://.</p>
+            <p id="site-url-error" class="field-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="other-hosts">Other hostnames or URLs in scope (optional)</label>
+            <textarea id="other-hosts" name="other-hosts" maxlength="1000" aria-describedby="other-hosts-hint other-hosts-error"></textarea>
+            <p id="other-hosts-hint" class="hint">List any other hostnames or URLs you want included. Leave blank if there are none.</p>
+            <p id="other-hosts-error" class="field-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="requester-name">Your name (required)</label>
+            <input id="requester-name" name="requester-name" type="text" autocomplete="name" required aria-required="true" maxlength="120" aria-describedby="requester-name-error">
+            <p id="requester-name-error" class="field-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="contact-email">Contact email (required)</label>
+            <input id="contact-email" name="contact-email" type="email" autocomplete="email" spellcheck="false" required aria-required="true" maxlength="200" aria-describedby="contact-email-hint contact-email-error">
+            <p id="contact-email-hint" class="hint">Where we should reply. This is not a password.</p>
+            <p id="contact-email-error" class="field-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="project-name">Project name (required)</label>
+            <input id="project-name" name="project-name" type="text" autocomplete="organization" required aria-required="true" maxlength="160" aria-describedby="project-name-error">
+            <p id="project-name-error" class="field-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <label for="role">Your role (required)</label>
+            <select id="role" name="role" required aria-required="true" aria-describedby="role-error">
+              <option value="">Select your role</option>
+              <option value="owner">Owner</option>
+              <option value="maintainer">Maintainer</option>
+              <option value="authorized">Authorized on the owner's behalf</option>
+            </select>
+            <p id="role-error" class="field-error" hidden></p>
+          </div>
+
+          <div id="owner-fields" hidden>
+            <div class="field">
+              <label for="owner-name">Owner name (required)</label>
+              <input id="owner-name" name="owner-name" type="text" autocomplete="name" maxlength="120" disabled aria-required="false" aria-describedby="owner-name-hint owner-name-error">
+              <p id="owner-name-hint" class="hint">Required because you are writing on the owner's behalf.</p>
+              <p id="owner-name-error" class="field-error" hidden></p>
+            </div>
+            <div class="field">
+              <label for="owner-contact">Owner contact (required)</label>
+              <input id="owner-contact" name="owner-contact" type="text" autocomplete="off" maxlength="200" disabled aria-required="false" aria-describedby="owner-contact-hint owner-contact-error">
+              <p id="owner-contact-hint" class="hint">An email or phone number for the owner.</p>
+              <p id="owner-contact-error" class="field-error" hidden></p>
+            </div>
+          </div>
+
+          <fieldset class="choice" id="digibyte-builder" aria-describedby="builder-hint digibyte-builder-error">
+            <legend>DigiByte builder (required)</legend>
+            <label><input type="radio" name="digibyte-builder" value="yes" required aria-describedby="builder-hint"> Yes. I publicly build or maintain a DigiByte project.</label>
+            <label><input type="radio" name="digibyte-builder" value="no"> No.</label>
+            <p id="builder-hint" class="hint">Free reviews are for people who publicly build or maintain a DigiByte project. Scope is still agreed per project.</p>
+            <p id="digibyte-builder-error" class="field-error" hidden></p>
+          </fieldset>
+
+          <div class="field" id="builder-link" hidden>
+            <label for="project-link">Public project link (required)</label>
+            <input id="project-link" name="project-link" type="url" inputmode="url" autocomplete="url" spellcheck="false" maxlength="300" disabled aria-required="false" aria-describedby="project-link-hint project-link-error">
+            <p id="project-link-hint" class="hint">A public repo, site, or X profile that shows the DigiByte project.</p>
+            <p id="project-link-error" class="field-error" hidden></p>
+          </div>
+
+          <fieldset class="choice" id="requested-scope" aria-describedby="requested-scope-error">
+            <legend>What you want reviewed (required)</legend>
+            <label><input type="radio" name="requested-scope" value="public" checked required> Public-surface review</label>
+            <label><input type="radio" name="requested-scope" value="deeper"> Interested in deeper testing. This is only a note of interest. It is discussed separately and needs a signed authorization. This request does not approve it.</label>
+            <p id="requested-scope-error" class="field-error" hidden></p>
+          </fieldset>
+
+          <div class="field">
+            <label for="exclusions">Anything off limits (optional)</label>
+            <textarea id="exclusions" name="exclusions" maxlength="1500" aria-describedby="exclusions-hint exclusions-error"></textarea>
+            <p id="exclusions-hint" class="hint">Third-party services, admin areas, payment flows, times, or anything else you want kept out of scope.</p>
+            <p id="exclusions-error" class="field-error" hidden></p>
+          </div>
+
+          <div class="field">
+            <label class="check" for="confirm-authority">
+              <input id="confirm-authority" name="confirm-authority" type="checkbox" required aria-required="true" aria-describedby="confirm-authority-error">
+              <span>I control this site or have the owner's permission, and I understand this is a request, not authorization to test. (required)</span>
+            </label>
+            <p id="confirm-authority-error" class="field-error" hidden></p>
+          </div>
+
+          <div class="hp" aria-hidden="true">
+            <label for="atb-leave-blank">Leave this blank</label>
+            <input id="atb-leave-blank" name="atb_leave_blank" type="text" tabindex="-1" autocomplete="off" value="">
+          </div>
+
+          <p id="open-help" class="help">Open in my email app opens the email application on your device with a draft to contact@aroundtheblock.us. It does not send the email. Copy message copies the draft. Download message saves a text file. Nothing is delivered until you send it yourself from your email app.</p>
+          <div class="actions">
+            <button type="button" class="primary" id="open-mail" aria-describedby="open-help">Open in my email app</button>
+            <button type="button" class="secondary" id="copy-draft" aria-describedby="open-help">Copy message</button>
+            <button type="button" class="secondary" id="download-draft" aria-describedby="open-help">Download message</button>
+          </div>
+          <p id="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <section id="draft" hidden>
+          <h2>Prepared draft</h2>
+          <p>This draft is on your device only. To: <strong id="draft-to"></strong></p>
+          <div class="field">
+            <label for="draft-text">Prepared message</label>
+            <textarea id="draft-text" readonly></textarea>
+          </div>
+        </section>
+
+        <h2>The fine print</h2>
+        <div class="legal">
+          <ol>
+            <li><strong>Default Services.</strong> Unless the parties agree otherwise in writing, the Services consist of testing of Client's public-facing websites and related public surfaces using current AI-assisted toolkits, operated and supervised by a person. The specific tools and methods may expand or change over time. By default, testing is passive and non-intrusive: it is limited to what a normal browser user or public DNS lookup could observe, plus materials Client chooses to provide.</li>
+            <li><strong>Active or Targeted Testing.</strong> ATB will perform deeper, targeted, or active testing (for example authenticated testing, port scanning, fuzzing, or exploit-style checks) only if Client requests it in writing and the parties sign a written authorization and rules of engagement that name the assets, methods, time window, rate limits, and contacts. ATB will stay within those rules and will stop on Client's request.</li>
+            <li><strong>Point-in-Time Review.</strong> Each review reflects only the systems, configurations, and content observed on the date or dates tested. The Services are not continuous monitoring, incident response, or ongoing protection. Changes made after the test date are not covered.</li>
+            <li><strong>No Warranty.</strong> The Services, reports, and any badge are provided "as is." ATB makes no warranty or guarantee, express or implied, that any site is secure, free of defects, or free of vulnerabilities, and disclaims all implied warranties, including merchantability and fitness for a particular purpose. Tools and reviewers can miss issues. Findings are advisory only. Client alone is responsible for deciding whether and how to fix any issue and for all remediation.</li>
+            <li><strong>Limitation of Liability.</strong> To the fullest extent permitted by law, ATB's liability for an engagement is limited as stated in the written agreement for that engagement. In no event is ATB liable for indirect, incidental, special, consequential, or punitive damages, or for lost profits, revenue, data, or goodwill, even if advised of their possibility. This section does not limit liability that cannot be limited under applicable law.</li>
+            <li><strong>Client Authority and Verification.</strong> Before any testing, Client must confirm in writing that it owns, or is authorized by the owner to permit testing of, every asset in scope. ATB will verify control of each domain by a DNS TXT record or a file placed at a /.well-known path that ATB specifies, and will not test until verification succeeds. Client will defend, indemnify, and hold harmless ATB from claims, losses, and costs arising from any misstatement of Client's ownership or authority.</li>
+            <li><strong>Third-Party Infrastructure.</strong> Client is responsible for obtaining any permission required from its hosting provider, CDN, cloud platform, or other third-party service before testing. Third-party systems are out of scope unless Client provides that provider's written permission or the provider's published terms clearly allow the testing.</li>
+            <li><strong>Confidentiality and Data Handling.</strong> ATB will treat findings, reports, and data collected during an engagement as Client confidential information, use them only to perform the Services, and not publish or share them without Client's written consent, except as required by law. ATB will collect the minimum data needed, redact secrets in reports, protect stored data with reasonable security measures, keep raw tool output for up to 90 days after delivery and final reports for up to 24 months (or less on Client's written request), and then delete them.</li>
+            <li><strong>AI-Assisted Tools.</strong> ATB uses automated and AI-assisted tools to run tests and draft reports. A person reviews findings and reports before delivery, but AI-assisted output can contain errors, and that review does not change Sections 3 through 5.</li>
+            <li><strong>Badge.</strong> If Client opts in, ATB may issue a badge that states the site was "reviewed," never "secured," for example: "Reviewed by AroundTheBlock.Us on YYYY-MM-DD (badge expires YYYY-MM-DD)." The badge must link to ATB's verification page, which shows the review date, expiry, and a disclaimer that a review is not a guarantee of security. The badge expires 90 days after the review date unless renewed by a new review. ATB may revoke the badge at any time, including if Client misrepresents it, and Client will remove it on expiry or revocation and will not describe it as a certification or guarantee.</li>
+          </ol>
+        </div>
+        <p>Around The Block LLC. Nothing on this page is legal advice or a guarantee of security. Last updated Nov 8, 2026.</p>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h3>Around The Block LLC</h3>
+        <p>7122 S Sheridan Rd Ste 2 PMB 1022<br>Tulsa, OK 74133-2748<br>United States</p>
+        <p>Phone: <a href="tel:+19182376979">(918) 237-6979</a></p>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>General: <a href="mailto:contact@aroundtheblock.us">contact@aroundtheblock.us</a></p>
+        <p>Support: <a href="mailto:support@aroundtheblock.us">support@aroundtheblock.us</a></p>
+        <p>Privacy: <a href="mailto:privacy@aroundtheblock.us">privacy@aroundtheblock.us</a></p>
+        <p>We respond to support requests within two business days.</p>
+      </div>
+      <div>
+        <h3>Security</h3>
+        <p>Security: <a href="mailto:security@aroundtheblock.us">security@aroundtheblock.us</a></p>
+        <p>Security issues are handled under the policy published in <a href="https://github.com/JohnnyLawDGB/digibytewallet-android">SECURITY.md in the wallet repository</a>. Please report them there or to security@aroundtheblock.us rather than in public channels.</p>
+      </div>
+    </div>
+    <div class="disclose">
+      <span>Copyright 2026 AROUND THE BLOCK LLC. All rights reserved.</span>
+      <span class="legal">
+        <a href="privacy-policy">Privacy Policy</a>
+        <a href="bot-terms">Bot Terms</a>
+        <a href="bot-privacy">Bot Privacy</a>
+        <a href="contact">Contact</a>
+      </span>
+    </div>
+  </div>
+</footer>
+<script src="assets/site-review-intake.js"></script>
+<script src="assets/site-review-form.js"></script>
 </body>
 </html>
