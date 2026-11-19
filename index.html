@@ -69,6 +69,8 @@
   .products .cards{grid-template-columns:1fr 1fr 1fr}
   .card p.disc a{color:var(--accent)}
   .card p.disc a:hover{color:var(--accent-hi)}
+  .card p.desc a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+  .card p.desc a:hover{color:var(--accent-hi)}
 
   .products{padding:96px 0 104px}
   .label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 28px}
@@ -233,7 +235,7 @@
           <img class="mark" src="assets/holdfast-mark.png" width="96" height="96" alt="HoldFast Wallet mark">
           <h2>HoldFast Wallet</h2>
           <p class="tag">Android &middot; Non-custodial &middot; Open source</p>
-          <p class="desc">A self-custody mobile wallet for DGB and DigiDollar on Android. Your keys are generated and stored on your phone, and sync runs on BIP157/158 compact block filters, so your addresses never leave your device. Formerly ATB Wallet. Coming to Google Play. An iOS version is in development.</p>
+          <p class="desc">A self-custody mobile wallet for DGB and DigiDollar on Android. Your keys are generated and stored on your phone, and sync runs on BIP157/158 compact block filters, so your addresses never leave your device. Formerly ATB Wallet. HoldFast is listed on <a href="https://play.google.com/store/apps/details?id=app.aroundtheblock.wallet">Google Play</a> and available on Apple TestFlight.</p>
           <p class="disc"><em>Independent wallet by Around The Block LLC. Not an official DigiByte app.</em></p>
           <div class="links">
             <a href="https://digiscope.me/wallet">Download and details <span class="arr">&rarr;</span></a>
@@ -257,6 +259,7 @@
           <h2>Website security review</h2>
           <p class="tag">Independent &middot; Point-in-time &middot; Free for DigiByte builders</p>
           <p class="desc">An independent, point-in-time look at a public website, with human-reviewed findings and suggested fixes. Free for people who publicly build or maintain a DigiByte project. Other projects are follow-up only. It is not monitoring, not a certification, and not a guarantee that the site is secure.</p>
+          <p class="desc">Around The Block is approved for OpenAI's Trusted Access for Cyber (Daybreak) program.</p>
           <div class="links">
             <a href="site-review">Request a website security review <span class="arr">&rarr;</span></a>
           </div>
@@ -278,7 +281,7 @@
         <li>Independently built, verified and signed the DigiByte Core 8.22 release.</li>
         <li>Tested the 9.26 release and contributed bug reports and fixes that shipped in the final version.</li>
         <li>Takes part in the current DigiByte developer chats on Gitter.</li>
-        <li>Maintains and secures the price oracles that DigiDollar minting depends on.</li>
+        <li>Named operator of DigiDollar oracle 8 in DigiByte Core.</li>
         <li>Can trace stolen funds on-chain.</li>
       </ul>
     </div>
