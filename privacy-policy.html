@@ -150,7 +150,7 @@
       <h1>Privacy Policy</h1>
       <div class="prose ">
 <h3 id="top"><strong>HOLDFAST WALLET — PRIVACY POLICY</strong></h3>
-<p>Effective 2026-10-23</p>
+<p>Effective 2026-11-23</p>
 <h3 id="summary"><strong>SUMMARY</strong></h3>
 <ul>
   <li>Using the wallet to hold and move DigiByte requires no account. We do not know who you are.</li>
@@ -162,13 +162,13 @@
 </ul>
 <h3 id="who-publishes-this-app"><strong>WHO PUBLISHES THIS APP</strong></h3>
 <p>HoldFast Wallet is published by Around The Block LLC, an Oklahoma limited liability company, which also operates the DigiScope service the app connects to. Where this policy says “we”, it means Around The Block LLC. Around The Block LLC is the party responsible for the data practices described here.</p>
-<p>This policy covers HoldFast Wallet for Android (<code>app.aroundtheblock.wallet</code>), formerly named ATB Wallet for DigiByte (DGB) and DigiByte Mobile, and its retired predecessor DigiByte Wallet (<code>io.digibyte</code>).</p>
+<p>This policy covers HoldFast Wallet for Android and HoldFast Wallet for iPhone (both <code>app.aroundtheblock.wallet</code>), formerly named ATB Wallet for DigiByte (DGB) and DigiByte Mobile, and its retired predecessor DigiByte Wallet (<code>io.digibyte</code>).</p>
 <p>Independent wallet by Around The Block LLC. Not an official DigiByte app.</p>
 <p>Independent wallet by Around The Block LLC; not affiliated with or endorsed by the DigiByte Foundation, DigiByte Alliance or DigiByte-Core.</p>
 <p>The company is at aroundtheblock.us, which hosts the authoritative copy of this policy. This policy is also published on digiscope.me, where the app is distributed: <a href="https://digiscope.me/wallet/privacy-policy" rel="noopener">https://digiscope.me/wallet/privacy-policy</a></p>
 <p>To reach us about anything in this policy, write to privacy@aroundtheblock.us, or use the support page linked at the bottom.</p>
 <h3 id="what-we-collect-nothing-that-identifies-you"><strong>WHAT WE COLLECT: NOTHING THAT IDENTIFIES YOU</strong></h3>
-<p>Holding and moving DigiByte requires no account. There is no sign-up, no email address, no password, and no profile — you can install the wallet, generate keys, receive and spend, and never identify yourself to anyone. If you never open the community features described below, we hold nothing about you beyond the short-lived server logs any web request produces.</p>
+<p>Holding and moving DigiByte requires no account. There is no sign-up, no email address, no password, and no profile — you can install the wallet, generate keys, receive and spend, and never identify yourself to anyone. If you never open the community features described below, we hold nothing about you. DigiScope’s servers do not keep logs of requests: an IP address or request is used only to answer it and is not stored.</p>
 <p>The app contains no analytics SDK, no crash-reporting SDK, no advertising or attribution SDK, and does not read the Android advertising ID. It does not use Google Play Services. There is no telemetry to disable, because none was written.</p>
 <h3 id="what-never-leaves-your-device"><strong>WHAT NEVER LEAVES YOUR DEVICE</strong></h3>
 <p>Your recovery phrase, private keys, PIN, and any biometric data stay on your device. Biometrics are handled by Android itself; the app receives only a yes-or-no unlock result and never sees your fingerprint or face data.</p>
@@ -198,6 +198,18 @@
   <li>Links you tap — a block explorer (which receives the transaction ID), GitHub, the asset creator, or the bug-report page — open in your browser. Those sites see an ordinary web visit, governed by their own privacy policies, not this one.</li>
 </ul>
 <p>Tor is off by default. When you turn it on, the app’s connections go through Tor, except the DigiStamp Market tab and links opened in your browser. If Tor cannot start or cannot reach any peer, the app falls back to a direct connection and tells you so with a banner rather than stop working — so Tor reduces what servers and peers learn, but is not a guarantee.</p>
+<h3 id="holdfast-wallet-for-iphone"><strong>HOLDFAST WALLET FOR IPHONE</strong></h3>
+<p>HoldFast Wallet for iPhone (<code>app.aroundtheblock.wallet</code> on the App Store) is published by Around The Block LLC and follows this policy, with these differences from the Android app:</p>
+<ul>
+  <li>No update check. The App Store updates the app, so it never contacts GitHub.</li>
+  <li>No community features. The Hub, DigiRunner and tipping are not in the iPhone app, so it creates no DigiScope account.</li>
+  <li>No Tor and no DigiStamp Market yet. They will be added in later versions, and this policy will be updated when they are.</li>
+  <li>No background confirmation checks. The iPhone app asks api.digiscope.me about your transactions only when you run “Scan for missing funds” or “Recover funds”, or tap “Check other formats” while restoring.</li>
+  <li>Face ID and Touch ID are handled by iOS. The app receives only a yes-or-no result and never sees your face or fingerprint data.</li>
+  <li>Your recovery phrase is stored in the iOS Keychain on this device only. It is excluded from iCloud and device backups, and is read only to sign a transaction or to show you the phrase.</li>
+  <li>The app contains no analytics, no crash-reporting SDK and no advertising identifier. Crash reports you choose to share with developers through iOS reach us only through Apple.</li>
+</ul>
+<p>Every other section of this policy applies to the iPhone app as written.</p>
 <h3 id="bug-reports-are-voluntary-and-here-is-exactly-what-they-carry"><strong>BUG REPORTS ARE VOLUNTARY, AND HERE IS EXACTLY WHAT THEY CARRY</strong></h3>
 <p>Reporting a bug from inside the app opens the report page on digiscope.me in your browser, pre-filled with technical facts about the build so you do not have to transcribe them: device model and manufacturer, Android version and SDK level, app version and build number, memory page size, whether you are on mainnet or testnet, and the sync stage the wallet was in.</p>
 <p>That is the complete list. No addresses, no balances, no keys, no identifiers, and nothing that names you. You write the description yourself, you can see the pre-filled values before sending, and nothing is submitted unless you submit it.</p>
