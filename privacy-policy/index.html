@@ -168,7 +168,7 @@
 <p>The company is at aroundtheblock.us, which hosts the authoritative copy of this policy. This policy is also published on digiscope.me, where the app is distributed: <a href="https://digiscope.me/wallet/privacy-policy" rel="noopener">https://digiscope.me/wallet/privacy-policy</a></p>
 <p>To reach us about anything in this policy, write to privacy@aroundtheblock.us, or use the support page linked at the bottom.</p>
 <h3 id="what-we-collect-nothing-that-identifies-you"><strong>WHAT WE COLLECT: NOTHING THAT IDENTIFIES YOU</strong></h3>
-<p>Holding and moving DigiByte requires no account. There is no sign-up, no email address, no password, and no profile — you can install the wallet, generate keys, receive and spend, and never identify yourself to anyone. If you never open the community features described below, we hold nothing about you. DigiScope’s servers do not keep logs of requests: an IP address or request is used only to answer it and is not stored.</p>
+<p>Holding and moving DigiByte requires no account. There is no sign-up, no email address, no password, and no profile — you can install the wallet, generate keys, receive and spend, and never identify yourself to anyone. If you never open the community features described below, we hold nothing about you beyond standard short-lived access logs. DigiScope’s servers do not retain request logs beyond those access logs.</p>
 <p>The app contains no analytics SDK, no crash-reporting SDK, no advertising or attribution SDK, and does not read the Android advertising ID. It does not use Google Play Services. There is no telemetry to disable, because none was written.</p>
 <h3 id="what-never-leaves-your-device"><strong>WHAT NEVER LEAVES YOUR DEVICE</strong></h3>
 <p>Your recovery phrase, private keys, PIN, and any biometric data stay on your device. Biometrics are handled by Android itself; the app receives only a yes-or-no unlock result and never sees your fingerprint or face data.</p>
@@ -199,7 +199,7 @@
 </ul>
 <p>Tor is off by default. When you turn it on, the app’s connections go through Tor, except the DigiStamp Market tab and links opened in your browser. If Tor cannot start or cannot reach any peer, the app falls back to a direct connection and tells you so with a banner rather than stop working — so Tor reduces what servers and peers learn, but is not a guarantee.</p>
 <h3 id="holdfast-wallet-for-iphone"><strong>HOLDFAST WALLET FOR IPHONE</strong></h3>
-<p>HoldFast Wallet for iPhone (<code>app.aroundtheblock.wallet</code> on the App Store) is published by Around The Block LLC and follows this policy, with these differences from the Android app:</p>
+<p>HoldFast Wallet for iPhone (<code>app.aroundtheblock.wallet</code>, available on TestFlight, and the App Store once released) is published by Around The Block LLC and follows this policy, with these differences from the Android app:</p>
 <ul>
   <li>No update check. The App Store updates the app, so it never contacts GitHub.</li>
   <li>No community features. The Hub, DigiRunner and tipping are not in the iPhone app, so it creates no DigiScope account.</li>
@@ -214,7 +214,7 @@
 <p>Reporting a bug from inside the app opens the report page on digiscope.me in your browser, pre-filled with technical facts about the build so you do not have to transcribe them: device model and manufacturer, Android version and SDK level, app version and build number, memory page size, whether you are on mainnet or testnet, and the sync stage the wallet was in.</p>
 <p>That is the complete list. No addresses, no balances, no keys, no identifiers, and nothing that names you. You write the description yourself, you can see the pre-filled values before sending, and nothing is submitted unless you submit it.</p>
 <h3 id="server-logs"><strong>SERVER LOGS</strong></h3>
-<p>DigiScope’s servers do not keep logs of requests. An IP address or request, including the path requested (which, for the requests described above, can include a transaction ID, an asset ID, a coin’s outpoint or a DigiDollar address), is used only to answer it and is not stored.</p>
+<p>DigiScope’s servers do not retain request logs beyond standard short-lived access logs. An IP address or request, including the path requested (which, for the requests described above, can include a transaction ID, an asset ID, a coin’s outpoint or a DigiDollar address), may be written to those access logs.</p>
 <p>Request data is not used to build user profiles, is not combined with any other dataset to identify individuals, and is not sold or shared for advertising.</p>
 <h3 id="android-permissions-and-why-each-one-exists"><strong>ANDROID PERMISSIONS, AND WHY EACH ONE EXISTS</strong></h3>
 <ul>
@@ -228,7 +228,7 @@
 <p>The app requests no location, contacts, storage, microphone, or phone permissions.</p>
 <h3 id="we-do-not-sell-or-share-your-data"><strong>WE DO NOT SELL OR SHARE YOUR DATA</strong></h3>
 <p>We have no personal data to sell, and we sell none. Nothing is shared with advertisers, data brokers, or analytics providers. There are no advertising or attribution partners.</p>
-<p>Our servers keep no logs of requests, so there is no server-log information to disclose, even if we are legally compelled to. We cannot disclose keys, recovery phrases, or balances under any circumstances, because we do not hold them.</p>
+<p>We may disclose the short-lived access logs described above if legally compelled to. We cannot disclose keys, recovery phrases, or balances under any circumstances, because we do not hold them.</p>
 <h3 id="digi-id-sign-in"><strong>DIGI-ID SIGN-IN</strong></h3>
 <p>Digi-ID lets you sign in to a supporting website by scanning its QR code. The wallet signs a challenge and sends the signature, with the address that made it, to that site. No password and no personal information are transmitted, and DigiScope is not an intermediary in that exchange.</p>
 <p>Each site gets its own key, so sites cannot link your sign-ins to each other or to your wallet. The exceptions are DigiScope’s own sites, and any site you signed in to before per-site keys were introduced: those keep the wallet address used before, so your existing account there still works.</p>
@@ -255,7 +255,7 @@
 <h3 id="deleting-your-community-account"><strong>DELETING YOUR COMMUNITY ACCOUNT</strong></h3>
 <p>The wallet itself has no account to delete: uninstalling the app removes its data from your phone. Write down your recovery phrase first, because we cannot restore it.</p>
 <p>If you signed in to the optional community features, you can ask us to delete that DigiScope account. Email privacy@aroundtheblock.us with the subject “Delete my account” and include your Hub handle and the address shown on your profile. We may ask you to confirm the request from inside the Hub, so that we know it comes from whoever controls the account. If the account holds a tip balance, say so in the request and we will settle it with you before deleting.</p>
-<p>Deletion removes the account record, your handle, your chat messages, forum threads, replies and upvotes, your DigiRunner scores, and the reports you filed. We complete it within 30 days. Our servers keep no access logs, so there are none to erase or age out. Anything recorded on the DigiByte blockchain, including the address itself, cannot be deleted by anyone.</p>
+<p>Deletion removes the account record, your handle, your chat messages, forum threads, replies and upvotes, your DigiRunner scores, and the reports you filed. We complete it within 30 days. Our servers keep standard short-lived access logs, which are not separately erased as part of this deletion. Anything recorded on the DigiByte blockchain, including the address itself, cannot be deleted by anyone.</p>
 <h3 id="your-data-your-control"><strong>YOUR DATA, YOUR CONTROL</strong></h3>
 <p>Because everything meaningful lives on your device, you control it directly. Uninstalling the app removes its local data from your phone. Funds are not stored in the app — they exist on the blockchain, and your recovery phrase is what reaches them, which is why that phrase must be backed up before you uninstall anything.</p>
 <p>If you want access, correction, or deletion of anything you believe we hold, write to privacy@aroundtheblock.us and we will respond within 30 days. In practice the honest answer is usually that we hold nothing tied to you.</p>
